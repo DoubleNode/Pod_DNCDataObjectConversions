@@ -1,0 +1,792 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6AD37F091DCE606900FFF836 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F081DCE606900FFF836 /* main.m */; };
+		6AD37F0C1DCE606900FFF836 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F0B1DCE606900FFF836 /* AppDelegate.m */; };
+		6AD37F0F1DCE606900FFF836 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F0E1DCE606900FFF836 /* ViewController.m */; };
+		6AD37F121DCE606900FFF836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD37F101DCE606900FFF836 /* Main.storyboard */; };
+		6AD37F141DCE606900FFF836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD37F131DCE606900FFF836 /* Assets.xcassets */; };
+		6AD37F171DCE606900FFF836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD37F151DCE606900FFF836 /* LaunchScreen.storyboard */; };
+		6AD37F221DCE606900FFF836 /* DNCDataObjectConversionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F211DCE606900FFF836 /* DNCDataObjectConversionsTests.m */; };
+		6AD37F4E1DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F311DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.m */; };
+		6AD37F4F1DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F331DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.m */; };
+		6AD37F501DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F351DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.m */; };
+		6AD37F511DCE60FF00FFF836 /* NSMutableDictionary+daoFavoriteToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F371DCE60FF00FFF836 /* NSMutableDictionary+daoFavoriteToDNC.m */; };
+		6AD37F521DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F391DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.m */; };
+		6AD37F531DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F3B1DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.m */; };
+		6AD37F541DCE60FF00FFF836 /* NSMutableDictionary+daoLocationToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F3D1DCE60FF00FFF836 /* NSMutableDictionary+daoLocationToDNC.m */; };
+		6AD37F551DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F3F1DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.m */; };
+		6AD37F561DCE60FF00FFF836 /* NSMutableDictionary+daoNewsToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F411DCE60FF00FFF836 /* NSMutableDictionary+daoNewsToDNC.m */; };
+		6AD37F571DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F431DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.m */; };
+		6AD37F581DCE60FF00FFF836 /* NSMutableDictionary+daoRatingToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F451DCE60FF00FFF836 /* NSMutableDictionary+daoRatingToDNC.m */; };
+		6AD37F591DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F471DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.m */; };
+		6AD37F5A1DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F491DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.m */; };
+		6AD37F5B1DCE60FF00FFF836 /* NSMutableDictionary+daoUserDeviceToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F4B1DCE60FF00FFF836 /* NSMutableDictionary+daoUserDeviceToDNC.m */; };
+		6AD37F5C1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F4D1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.m */; };
+		6AD37F7B1DCE610E00FFF836 /* DAOActivity+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F5E1DCE610E00FFF836 /* DAOActivity+dncToDAO.m */; };
+		6AD37F7C1DCE610E00FFF836 /* DAOAuth+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F601DCE610E00FFF836 /* DAOAuth+dncToDAO.m */; };
+		6AD37F7D1DCE610E00FFF836 /* DAOCheckin+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F621DCE610E00FFF836 /* DAOCheckin+dncToDAO.m */; };
+		6AD37F7E1DCE610E00FFF836 /* DAOFavorite+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F641DCE610E00FFF836 /* DAOFavorite+dncToDAO.m */; };
+		6AD37F7F1DCE610E00FFF836 /* DAOFollow+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F661DCE610E00FFF836 /* DAOFollow+dncToDAO.m */; };
+		6AD37F801DCE610E00FFF836 /* DAOItem+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F681DCE610E00FFF836 /* DAOItem+dncToDAO.m */; };
+		6AD37F811DCE610E00FFF836 /* DAOLocation+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F6A1DCE610E00FFF836 /* DAOLocation+dncToDAO.m */; };
+		6AD37F821DCE610E00FFF836 /* DAOMessage+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F6C1DCE610E00FFF836 /* DAOMessage+dncToDAO.m */; };
+		6AD37F831DCE610E00FFF836 /* DAONews+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F6E1DCE610E00FFF836 /* DAONews+dncToDAO.m */; };
+		6AD37F841DCE610E00FFF836 /* DAOPhoto+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F701DCE610E00FFF836 /* DAOPhoto+dncToDAO.m */; };
+		6AD37F851DCE610E00FFF836 /* DAORating+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F721DCE610E00FFF836 /* DAORating+dncToDAO.m */; };
+		6AD37F861DCE610E00FFF836 /* DAOReview+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F741DCE610E00FFF836 /* DAOReview+dncToDAO.m */; };
+		6AD37F871DCE610E00FFF836 /* DAOUser+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F761DCE610E00FFF836 /* DAOUser+dncToDAO.m */; };
+		6AD37F881DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F781DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m */; };
+		6AD37F891DCE610E00FFF836 /* DAOWishlist+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F7A1DCE610E00FFF836 /* DAOWishlist+dncToDAO.m */; };
+		6AD37F8C1DCE612100FFF836 /* DNCDataObjectConversions.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6AD37F8A1DCE612100FFF836 /* DNCDataObjectConversions.podspec */; };
+		6AD37F8D1DCE612100FFF836 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F8B1DCE612100FFF836 /* README.md */; };
+		AB7F762AE076F2909F1B7ADB /* Pods_DNCDataObjectConversionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792A50E4F2AA39E020F857D3 /* Pods_DNCDataObjectConversionsTests.framework */; };
+		CF1CE84076C745931D809C02 /* Pods_DNCDataObjectConversions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309A2ED88DC2F67437E986B3 /* Pods_DNCDataObjectConversions.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6AD37F1E1DCE606900FFF836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AD37EFC1DCE606900FFF836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AD37F031DCE606900FFF836;
+			remoteInfo = DNCDataObjectConversions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EFBE2E177EA61382FBCA727 /* Pods-DNCDataObjectConversionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversionsTests/Pods-DNCDataObjectConversionsTests.release.xcconfig"; sourceTree = "<group>"; };
+		309A2ED88DC2F67437E986B3 /* Pods_DNCDataObjectConversions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNCDataObjectConversions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D49C282B2EA227D2686F95B /* Pods-DNCDataObjectConversions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversions.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversions/Pods-DNCDataObjectConversions.release.xcconfig"; sourceTree = "<group>"; };
+		598C4F53905420020C65F4A2 /* Pods-DNCDataObjectConversionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversionsTests/Pods-DNCDataObjectConversionsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6AD37F041DCE606900FFF836 /* DNCDataObjectConversions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNCDataObjectConversions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD37F081DCE606900FFF836 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6AD37F0A1DCE606900FFF836 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6AD37F0B1DCE606900FFF836 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6AD37F0D1DCE606900FFF836 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6AD37F0E1DCE606900FFF836 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6AD37F111DCE606900FFF836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6AD37F131DCE606900FFF836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AD37F161DCE606900FFF836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AD37F181DCE606900FFF836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AD37F1D1DCE606900FFF836 /* DNCDataObjectConversionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNCDataObjectConversionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD37F211DCE606900FFF836 /* DNCDataObjectConversionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNCDataObjectConversionsTests.m; sourceTree = "<group>"; };
+		6AD37F231DCE606900FFF836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AD37F301DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoActivityToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoActivityToDNC.h"; sourceTree = "<group>"; };
+		6AD37F311DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoActivityToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoActivityToDNC.m"; sourceTree = "<group>"; };
+		6AD37F321DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoAuthToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoAuthToDNC.h"; sourceTree = "<group>"; };
+		6AD37F331DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoAuthToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoAuthToDNC.m"; sourceTree = "<group>"; };
+		6AD37F341DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoCheckinToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoCheckinToDNC.h"; sourceTree = "<group>"; };
+		6AD37F351DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoCheckinToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoCheckinToDNC.m"; sourceTree = "<group>"; };
+		6AD37F361DCE60FF00FFF836 /* NSMutableDictionary+daoFavoriteToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoFavoriteToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoFavoriteToDNC.h"; sourceTree = "<group>"; };
+		6AD37F371DCE60FF00FFF836 /* NSMutableDictionary+daoFavoriteToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoFavoriteToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoFavoriteToDNC.m"; sourceTree = "<group>"; };
+		6AD37F381DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoFollowToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoFollowToDNC.h"; sourceTree = "<group>"; };
+		6AD37F391DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoFollowToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoFollowToDNC.m"; sourceTree = "<group>"; };
+		6AD37F3A1DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoItemToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoItemToDNC.h"; sourceTree = "<group>"; };
+		6AD37F3B1DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoItemToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoItemToDNC.m"; sourceTree = "<group>"; };
+		6AD37F3C1DCE60FF00FFF836 /* NSMutableDictionary+daoLocationToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoLocationToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoLocationToDNC.h"; sourceTree = "<group>"; };
+		6AD37F3D1DCE60FF00FFF836 /* NSMutableDictionary+daoLocationToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoLocationToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoLocationToDNC.m"; sourceTree = "<group>"; };
+		6AD37F3E1DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoMessageToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoMessageToDNC.h"; sourceTree = "<group>"; };
+		6AD37F3F1DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoMessageToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoMessageToDNC.m"; sourceTree = "<group>"; };
+		6AD37F401DCE60FF00FFF836 /* NSMutableDictionary+daoNewsToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoNewsToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoNewsToDNC.h"; sourceTree = "<group>"; };
+		6AD37F411DCE60FF00FFF836 /* NSMutableDictionary+daoNewsToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoNewsToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoNewsToDNC.m"; sourceTree = "<group>"; };
+		6AD37F421DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoPhotoToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoPhotoToDNC.h"; sourceTree = "<group>"; };
+		6AD37F431DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoPhotoToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoPhotoToDNC.m"; sourceTree = "<group>"; };
+		6AD37F441DCE60FF00FFF836 /* NSMutableDictionary+daoRatingToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoRatingToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoRatingToDNC.h"; sourceTree = "<group>"; };
+		6AD37F451DCE60FF00FFF836 /* NSMutableDictionary+daoRatingToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoRatingToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoRatingToDNC.m"; sourceTree = "<group>"; };
+		6AD37F461DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoReviewToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoReviewToDNC.h"; sourceTree = "<group>"; };
+		6AD37F471DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoReviewToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoReviewToDNC.m"; sourceTree = "<group>"; };
+		6AD37F481DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoUserToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoUserToDNC.h"; sourceTree = "<group>"; };
+		6AD37F491DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoUserToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoUserToDNC.m"; sourceTree = "<group>"; };
+		6AD37F4A1DCE60FF00FFF836 /* NSMutableDictionary+daoUserDeviceToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoUserDeviceToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoUserDeviceToDNC.h"; sourceTree = "<group>"; };
+		6AD37F4B1DCE60FF00FFF836 /* NSMutableDictionary+daoUserDeviceToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoUserDeviceToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoUserDeviceToDNC.m"; sourceTree = "<group>"; };
+		6AD37F4C1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoWishlistToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoWishlistToDNC.h"; sourceTree = "<group>"; };
+		6AD37F4D1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoWishlistToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoWishlistToDNC.m"; sourceTree = "<group>"; };
+		6AD37F5D1DCE610E00FFF836 /* DAOActivity+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOActivity+dncToDAO.h"; path = "Classes/dncToDAO/DAOActivity+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F5E1DCE610E00FFF836 /* DAOActivity+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOActivity+dncToDAO.m"; path = "Classes/dncToDAO/DAOActivity+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F5F1DCE610E00FFF836 /* DAOAuth+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOAuth+dncToDAO.h"; path = "Classes/dncToDAO/DAOAuth+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F601DCE610E00FFF836 /* DAOAuth+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOAuth+dncToDAO.m"; path = "Classes/dncToDAO/DAOAuth+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F611DCE610E00FFF836 /* DAOCheckin+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOCheckin+dncToDAO.h"; path = "Classes/dncToDAO/DAOCheckin+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F621DCE610E00FFF836 /* DAOCheckin+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOCheckin+dncToDAO.m"; path = "Classes/dncToDAO/DAOCheckin+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F631DCE610E00FFF836 /* DAOFavorite+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOFavorite+dncToDAO.h"; path = "Classes/dncToDAO/DAOFavorite+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F641DCE610E00FFF836 /* DAOFavorite+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOFavorite+dncToDAO.m"; path = "Classes/dncToDAO/DAOFavorite+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F651DCE610E00FFF836 /* DAOFollow+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOFollow+dncToDAO.h"; path = "Classes/dncToDAO/DAOFollow+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F661DCE610E00FFF836 /* DAOFollow+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOFollow+dncToDAO.m"; path = "Classes/dncToDAO/DAOFollow+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F671DCE610E00FFF836 /* DAOItem+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOItem+dncToDAO.h"; path = "Classes/dncToDAO/DAOItem+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F681DCE610E00FFF836 /* DAOItem+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOItem+dncToDAO.m"; path = "Classes/dncToDAO/DAOItem+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F691DCE610E00FFF836 /* DAOLocation+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOLocation+dncToDAO.h"; path = "Classes/dncToDAO/DAOLocation+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F6A1DCE610E00FFF836 /* DAOLocation+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOLocation+dncToDAO.m"; path = "Classes/dncToDAO/DAOLocation+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F6B1DCE610E00FFF836 /* DAOMessage+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOMessage+dncToDAO.h"; path = "Classes/dncToDAO/DAOMessage+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F6C1DCE610E00FFF836 /* DAOMessage+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOMessage+dncToDAO.m"; path = "Classes/dncToDAO/DAOMessage+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F6D1DCE610E00FFF836 /* DAONews+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAONews+dncToDAO.h"; path = "Classes/dncToDAO/DAONews+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F6E1DCE610E00FFF836 /* DAONews+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAONews+dncToDAO.m"; path = "Classes/dncToDAO/DAONews+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F6F1DCE610E00FFF836 /* DAOPhoto+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOPhoto+dncToDAO.h"; path = "Classes/dncToDAO/DAOPhoto+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F701DCE610E00FFF836 /* DAOPhoto+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOPhoto+dncToDAO.m"; path = "Classes/dncToDAO/DAOPhoto+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F711DCE610E00FFF836 /* DAORating+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAORating+dncToDAO.h"; path = "Classes/dncToDAO/DAORating+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F721DCE610E00FFF836 /* DAORating+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAORating+dncToDAO.m"; path = "Classes/dncToDAO/DAORating+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F731DCE610E00FFF836 /* DAOReview+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOReview+dncToDAO.h"; path = "Classes/dncToDAO/DAOReview+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F741DCE610E00FFF836 /* DAOReview+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOReview+dncToDAO.m"; path = "Classes/dncToDAO/DAOReview+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F751DCE610E00FFF836 /* DAOUser+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOUser+dncToDAO.h"; path = "Classes/dncToDAO/DAOUser+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F761DCE610E00FFF836 /* DAOUser+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOUser+dncToDAO.m"; path = "Classes/dncToDAO/DAOUser+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F771DCE610E00FFF836 /* DAOUserDevice+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOUserDevice+dncToDAO.h"; path = "Classes/dncToDAO/DAOUserDevice+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F781DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOUserDevice+dncToDAO.m"; path = "Classes/dncToDAO/DAOUserDevice+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F791DCE610E00FFF836 /* DAOWishlist+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOWishlist+dncToDAO.h"; path = "Classes/dncToDAO/DAOWishlist+dncToDAO.h"; sourceTree = "<group>"; };
+		6AD37F7A1DCE610E00FFF836 /* DAOWishlist+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOWishlist+dncToDAO.m"; path = "Classes/dncToDAO/DAOWishlist+dncToDAO.m"; sourceTree = "<group>"; };
+		6AD37F8A1DCE612100FFF836 /* DNCDataObjectConversions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DNCDataObjectConversions.podspec; sourceTree = "<group>"; };
+		6AD37F8B1DCE612100FFF836 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		792A50E4F2AA39E020F857D3 /* Pods_DNCDataObjectConversionsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNCDataObjectConversionsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F33DC0939763CD68F241D8 /* Pods-DNCDataObjectConversions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversions/Pods-DNCDataObjectConversions.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AD37F011DCE606900FFF836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF1CE84076C745931D809C02 /* Pods_DNCDataObjectConversions.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AD37F1A1DCE606900FFF836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB7F762AE076F2909F1B7ADB /* Pods_DNCDataObjectConversionsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AD37EFB1DCE606900FFF836 = {
+			isa = PBXGroup;
+			children = (
+				6AD37F2C1DCE60DB00FFF836 /* Cocoapod */,
+				6AD37F061DCE606900FFF836 /* DNCDataObjectConversions */,
+				6AD37F201DCE606900FFF836 /* DNCDataObjectConversionsTests */,
+				6AD37F051DCE606900FFF836 /* Products */,
+				F8171ECAC37F8027DF775AB6 /* Pods */,
+				B7BA48D0475BA7C64E0B5BA8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6AD37F051DCE606900FFF836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F041DCE606900FFF836 /* DNCDataObjectConversions.app */,
+				6AD37F1D1DCE606900FFF836 /* DNCDataObjectConversionsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AD37F061DCE606900FFF836 /* DNCDataObjectConversions */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F0A1DCE606900FFF836 /* AppDelegate.h */,
+				6AD37F0B1DCE606900FFF836 /* AppDelegate.m */,
+				6AD37F0D1DCE606900FFF836 /* ViewController.h */,
+				6AD37F0E1DCE606900FFF836 /* ViewController.m */,
+				6AD37F101DCE606900FFF836 /* Main.storyboard */,
+				6AD37F131DCE606900FFF836 /* Assets.xcassets */,
+				6AD37F151DCE606900FFF836 /* LaunchScreen.storyboard */,
+				6AD37F181DCE606900FFF836 /* Info.plist */,
+				6AD37F071DCE606900FFF836 /* Supporting Files */,
+			);
+			path = DNCDataObjectConversions;
+			sourceTree = "<group>";
+		};
+		6AD37F071DCE606900FFF836 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F081DCE606900FFF836 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6AD37F201DCE606900FFF836 /* DNCDataObjectConversionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F211DCE606900FFF836 /* DNCDataObjectConversionsTests.m */,
+				6AD37F231DCE606900FFF836 /* Info.plist */,
+			);
+			path = DNCDataObjectConversionsTests;
+			sourceTree = "<group>";
+		};
+		6AD37F2C1DCE60DB00FFF836 /* Cocoapod */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F8B1DCE612100FFF836 /* README.md */,
+				6AD37F8A1DCE612100FFF836 /* DNCDataObjectConversions.podspec */,
+				6AD37F2D1DCE60E100FFF836 /* Classes */,
+			);
+			name = Cocoapod;
+			sourceTree = "<group>";
+		};
+		6AD37F2D1DCE60E100FFF836 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F2E1DCE60E700FFF836 /* daoToDNC */,
+				6AD37F2F1DCE60EC00FFF836 /* dncToDAO */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		6AD37F2E1DCE60E700FFF836 /* daoToDNC */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F301DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.h */,
+				6AD37F311DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.m */,
+				6AD37F321DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.h */,
+				6AD37F331DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.m */,
+				6AD37F341DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.h */,
+				6AD37F351DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.m */,
+				6AD37F361DCE60FF00FFF836 /* NSMutableDictionary+daoFavoriteToDNC.h */,
+				6AD37F371DCE60FF00FFF836 /* NSMutableDictionary+daoFavoriteToDNC.m */,
+				6AD37F381DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.h */,
+				6AD37F391DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.m */,
+				6AD37F3A1DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.h */,
+				6AD37F3B1DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.m */,
+				6AD37F3C1DCE60FF00FFF836 /* NSMutableDictionary+daoLocationToDNC.h */,
+				6AD37F3D1DCE60FF00FFF836 /* NSMutableDictionary+daoLocationToDNC.m */,
+				6AD37F3E1DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.h */,
+				6AD37F3F1DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.m */,
+				6AD37F401DCE60FF00FFF836 /* NSMutableDictionary+daoNewsToDNC.h */,
+				6AD37F411DCE60FF00FFF836 /* NSMutableDictionary+daoNewsToDNC.m */,
+				6AD37F421DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.h */,
+				6AD37F431DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.m */,
+				6AD37F441DCE60FF00FFF836 /* NSMutableDictionary+daoRatingToDNC.h */,
+				6AD37F451DCE60FF00FFF836 /* NSMutableDictionary+daoRatingToDNC.m */,
+				6AD37F461DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.h */,
+				6AD37F471DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.m */,
+				6AD37F481DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.h */,
+				6AD37F491DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.m */,
+				6AD37F4A1DCE60FF00FFF836 /* NSMutableDictionary+daoUserDeviceToDNC.h */,
+				6AD37F4B1DCE60FF00FFF836 /* NSMutableDictionary+daoUserDeviceToDNC.m */,
+				6AD37F4C1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.h */,
+				6AD37F4D1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.m */,
+			);
+			name = daoToDNC;
+			sourceTree = "<group>";
+		};
+		6AD37F2F1DCE60EC00FFF836 /* dncToDAO */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37F5D1DCE610E00FFF836 /* DAOActivity+dncToDAO.h */,
+				6AD37F5E1DCE610E00FFF836 /* DAOActivity+dncToDAO.m */,
+				6AD37F5F1DCE610E00FFF836 /* DAOAuth+dncToDAO.h */,
+				6AD37F601DCE610E00FFF836 /* DAOAuth+dncToDAO.m */,
+				6AD37F611DCE610E00FFF836 /* DAOCheckin+dncToDAO.h */,
+				6AD37F621DCE610E00FFF836 /* DAOCheckin+dncToDAO.m */,
+				6AD37F631DCE610E00FFF836 /* DAOFavorite+dncToDAO.h */,
+				6AD37F641DCE610E00FFF836 /* DAOFavorite+dncToDAO.m */,
+				6AD37F651DCE610E00FFF836 /* DAOFollow+dncToDAO.h */,
+				6AD37F661DCE610E00FFF836 /* DAOFollow+dncToDAO.m */,
+				6AD37F671DCE610E00FFF836 /* DAOItem+dncToDAO.h */,
+				6AD37F681DCE610E00FFF836 /* DAOItem+dncToDAO.m */,
+				6AD37F691DCE610E00FFF836 /* DAOLocation+dncToDAO.h */,
+				6AD37F6A1DCE610E00FFF836 /* DAOLocation+dncToDAO.m */,
+				6AD37F6B1DCE610E00FFF836 /* DAOMessage+dncToDAO.h */,
+				6AD37F6C1DCE610E00FFF836 /* DAOMessage+dncToDAO.m */,
+				6AD37F6D1DCE610E00FFF836 /* DAONews+dncToDAO.h */,
+				6AD37F6E1DCE610E00FFF836 /* DAONews+dncToDAO.m */,
+				6AD37F6F1DCE610E00FFF836 /* DAOPhoto+dncToDAO.h */,
+				6AD37F701DCE610E00FFF836 /* DAOPhoto+dncToDAO.m */,
+				6AD37F711DCE610E00FFF836 /* DAORating+dncToDAO.h */,
+				6AD37F721DCE610E00FFF836 /* DAORating+dncToDAO.m */,
+				6AD37F731DCE610E00FFF836 /* DAOReview+dncToDAO.h */,
+				6AD37F741DCE610E00FFF836 /* DAOReview+dncToDAO.m */,
+				6AD37F751DCE610E00FFF836 /* DAOUser+dncToDAO.h */,
+				6AD37F761DCE610E00FFF836 /* DAOUser+dncToDAO.m */,
+				6AD37F771DCE610E00FFF836 /* DAOUserDevice+dncToDAO.h */,
+				6AD37F781DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m */,
+				6AD37F791DCE610E00FFF836 /* DAOWishlist+dncToDAO.h */,
+				6AD37F7A1DCE610E00FFF836 /* DAOWishlist+dncToDAO.m */,
+			);
+			name = dncToDAO;
+			sourceTree = "<group>";
+		};
+		B7BA48D0475BA7C64E0B5BA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				309A2ED88DC2F67437E986B3 /* Pods_DNCDataObjectConversions.framework */,
+				792A50E4F2AA39E020F857D3 /* Pods_DNCDataObjectConversionsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8171ECAC37F8027DF775AB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86F33DC0939763CD68F241D8 /* Pods-DNCDataObjectConversions.debug.xcconfig */,
+				3D49C282B2EA227D2686F95B /* Pods-DNCDataObjectConversions.release.xcconfig */,
+				598C4F53905420020C65F4A2 /* Pods-DNCDataObjectConversionsTests.debug.xcconfig */,
+				2EFBE2E177EA61382FBCA727 /* Pods-DNCDataObjectConversionsTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AD37F031DCE606900FFF836 /* DNCDataObjectConversions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AD37F261DCE606900FFF836 /* Build configuration list for PBXNativeTarget "DNCDataObjectConversions" */;
+			buildPhases = (
+				A6F2AC3CF3F68D9B94CE4527 /* [CP] Check Pods Manifest.lock */,
+				6AD37F001DCE606900FFF836 /* Sources */,
+				6AD37F011DCE606900FFF836 /* Frameworks */,
+				6AD37F021DCE606900FFF836 /* Resources */,
+				5BF283793D2EBD0E372FA12C /* [CP] Embed Pods Frameworks */,
+				7DB0C19E5936D78248536F0A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNCDataObjectConversions;
+			productName = DNCDataObjectConversions;
+			productReference = 6AD37F041DCE606900FFF836 /* DNCDataObjectConversions.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6AD37F1C1DCE606900FFF836 /* DNCDataObjectConversionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AD37F291DCE606900FFF836 /* Build configuration list for PBXNativeTarget "DNCDataObjectConversionsTests" */;
+			buildPhases = (
+				409E2A83B7D192787439662F /* [CP] Check Pods Manifest.lock */,
+				6AD37F191DCE606900FFF836 /* Sources */,
+				6AD37F1A1DCE606900FFF836 /* Frameworks */,
+				6AD37F1B1DCE606900FFF836 /* Resources */,
+				CB1A8A746D76872E8DA7A5BD /* [CP] Embed Pods Frameworks */,
+				18033CA41D77617D4C82CE64 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AD37F1F1DCE606900FFF836 /* PBXTargetDependency */,
+			);
+			name = DNCDataObjectConversionsTests;
+			productName = DNCDataObjectConversionsTests;
+			productReference = 6AD37F1D1DCE606900FFF836 /* DNCDataObjectConversionsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AD37EFC1DCE606900FFF836 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = DoubleNode.com;
+				TargetAttributes = {
+					6AD37F031DCE606900FFF836 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T864D3RXRZ;
+						ProvisioningStyle = Automatic;
+					};
+					6AD37F1C1DCE606900FFF836 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T864D3RXRZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6AD37F031DCE606900FFF836;
+					};
+				};
+			};
+			buildConfigurationList = 6AD37EFF1DCE606900FFF836 /* Build configuration list for PBXProject "DNCDataObjectConversions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AD37EFB1DCE606900FFF836;
+			productRefGroup = 6AD37F051DCE606900FFF836 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AD37F031DCE606900FFF836 /* DNCDataObjectConversions */,
+				6AD37F1C1DCE606900FFF836 /* DNCDataObjectConversionsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AD37F021DCE606900FFF836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD37F171DCE606900FFF836 /* LaunchScreen.storyboard in Resources */,
+				6AD37F141DCE606900FFF836 /* Assets.xcassets in Resources */,
+				6AD37F8C1DCE612100FFF836 /* DNCDataObjectConversions.podspec in Resources */,
+				6AD37F121DCE606900FFF836 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AD37F1B1DCE606900FFF836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18033CA41D77617D4C82CE64 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCDataObjectConversionsTests/Pods-DNCDataObjectConversionsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		409E2A83B7D192787439662F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5BF283793D2EBD0E372FA12C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCDataObjectConversions/Pods-DNCDataObjectConversions-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DB0C19E5936D78248536F0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCDataObjectConversions/Pods-DNCDataObjectConversions-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6F2AC3CF3F68D9B94CE4527 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB1A8A746D76872E8DA7A5BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCDataObjectConversionsTests/Pods-DNCDataObjectConversionsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AD37F001DCE606900FFF836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD37F7D1DCE610E00FFF836 /* DAOCheckin+dncToDAO.m in Sources */,
+				6AD37F511DCE60FF00FFF836 /* NSMutableDictionary+daoFavoriteToDNC.m in Sources */,
+				6AD37F891DCE610E00FFF836 /* DAOWishlist+dncToDAO.m in Sources */,
+				6AD37F561DCE60FF00FFF836 /* NSMutableDictionary+daoNewsToDNC.m in Sources */,
+				6AD37F541DCE60FF00FFF836 /* NSMutableDictionary+daoLocationToDNC.m in Sources */,
+				6AD37F0F1DCE606900FFF836 /* ViewController.m in Sources */,
+				6AD37F4E1DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.m in Sources */,
+				6AD37F571DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.m in Sources */,
+				6AD37F501DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.m in Sources */,
+				6AD37F851DCE610E00FFF836 /* DAORating+dncToDAO.m in Sources */,
+				6AD37F5A1DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.m in Sources */,
+				6AD37F0C1DCE606900FFF836 /* AppDelegate.m in Sources */,
+				6AD37F821DCE610E00FFF836 /* DAOMessage+dncToDAO.m in Sources */,
+				6AD37F531DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.m in Sources */,
+				6AD37F881DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m in Sources */,
+				6AD37F7C1DCE610E00FFF836 /* DAOAuth+dncToDAO.m in Sources */,
+				6AD37F7E1DCE610E00FFF836 /* DAOFavorite+dncToDAO.m in Sources */,
+				6AD37F7B1DCE610E00FFF836 /* DAOActivity+dncToDAO.m in Sources */,
+				6AD37F861DCE610E00FFF836 /* DAOReview+dncToDAO.m in Sources */,
+				6AD37F841DCE610E00FFF836 /* DAOPhoto+dncToDAO.m in Sources */,
+				6AD37F5B1DCE60FF00FFF836 /* NSMutableDictionary+daoUserDeviceToDNC.m in Sources */,
+				6AD37F801DCE610E00FFF836 /* DAOItem+dncToDAO.m in Sources */,
+				6AD37F521DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.m in Sources */,
+				6AD37F831DCE610E00FFF836 /* DAONews+dncToDAO.m in Sources */,
+				6AD37F551DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.m in Sources */,
+				6AD37F4F1DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.m in Sources */,
+				6AD37F091DCE606900FFF836 /* main.m in Sources */,
+				6AD37F5C1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.m in Sources */,
+				6AD37F8D1DCE612100FFF836 /* README.md in Sources */,
+				6AD37F811DCE610E00FFF836 /* DAOLocation+dncToDAO.m in Sources */,
+				6AD37F871DCE610E00FFF836 /* DAOUser+dncToDAO.m in Sources */,
+				6AD37F591DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.m in Sources */,
+				6AD37F581DCE60FF00FFF836 /* NSMutableDictionary+daoRatingToDNC.m in Sources */,
+				6AD37F7F1DCE610E00FFF836 /* DAOFollow+dncToDAO.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AD37F191DCE606900FFF836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD37F221DCE606900FFF836 /* DNCDataObjectConversionsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6AD37F1F1DCE606900FFF836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AD37F031DCE606900FFF836 /* DNCDataObjectConversions */;
+			targetProxy = 6AD37F1E1DCE606900FFF836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6AD37F101DCE606900FFF836 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AD37F111DCE606900FFF836 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6AD37F151DCE606900FFF836 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AD37F161DCE606900FFF836 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6AD37F241DCE606900FFF836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6AD37F251DCE606900FFF836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AD37F271DCE606900FFF836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F33DC0939763CD68F241D8 /* Pods-DNCDataObjectConversions.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCDataObjectConversions/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCDataObjectConversions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6AD37F281DCE606900FFF836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D49C282B2EA227D2686F95B /* Pods-DNCDataObjectConversions.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCDataObjectConversions/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCDataObjectConversions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6AD37F2A1DCE606900FFF836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 598C4F53905420020C65F4A2 /* Pods-DNCDataObjectConversionsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCDataObjectConversionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCDataObjectConversionsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNCDataObjectConversions.app/DNCDataObjectConversions";
+			};
+			name = Debug;
+		};
+		6AD37F2B1DCE606900FFF836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFBE2E177EA61382FBCA727 /* Pods-DNCDataObjectConversionsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCDataObjectConversionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCDataObjectConversionsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNCDataObjectConversions.app/DNCDataObjectConversions";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AD37EFF1DCE606900FFF836 /* Build configuration list for PBXProject "DNCDataObjectConversions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AD37F241DCE606900FFF836 /* Debug */,
+				6AD37F251DCE606900FFF836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AD37F261DCE606900FFF836 /* Build configuration list for PBXNativeTarget "DNCDataObjectConversions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AD37F271DCE606900FFF836 /* Debug */,
+				6AD37F281DCE606900FFF836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AD37F291DCE606900FFF836 /* Build configuration list for PBXNativeTarget "DNCDataObjectConversionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AD37F2A1DCE606900FFF836 /* Debug */,
+				6AD37F2B1DCE606900FFF836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AD37EFC1DCE606900FFF836 /* Project object */;
+}
