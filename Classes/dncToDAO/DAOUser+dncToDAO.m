@@ -89,6 +89,7 @@
     }
     
     self.optionIds  = optionIds;
+    self.options    = options;
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];

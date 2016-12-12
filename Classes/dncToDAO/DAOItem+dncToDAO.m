@@ -81,6 +81,32 @@
     
     self.locations  = daoLocations;
     
+    NSMutableDictionary*    options     = [@{ } mutableCopy];
+    NSMutableDictionary*    optionIds   = [@{ } mutableCopy];
+    
+    NSArray*    optionsArray = dictionary[@"options"];
+    if (optionsArray)
+    {
+        [optionsArray enumerateObjectsUsingBlock:
+         ^(NSDictionary* _Nonnull option, NSUInteger idx, BOOL* _Nonnull stop)
+         {
+             NSString*  key         = [self stringFromString:option[@"key"]];
+             NSString*  optionId    = [self idFromString:option[@"id"]];
+             
+             id value   = option[@"value"];
+             if (!value)
+             {
+                 value = option[@"value_long"];
+             }
+             
+             options[key]   = value;
+             optionIds[key] = optionId;
+         }];
+    }
+    
+    self.optionIds  = optionIds;
+    self.options    = options;
+    
     NSMutableArray<DAOPhoto* >* daoPhotos = [NSMutableArray array];
     
     NSDictionary* photoDictionary = dictionary[@"photo"];
