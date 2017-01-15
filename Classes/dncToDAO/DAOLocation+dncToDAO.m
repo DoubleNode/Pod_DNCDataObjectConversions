@@ -11,6 +11,7 @@
 #import "DAOLocation+dncToDAO.h"
 
 #import "DAOPhoto+dncToDAO.h"
+#import "DAOSocialAccount+dncToDAO.h"
 
 @implementation DAOLocation (dncToDAO)
 
@@ -104,6 +105,31 @@
     {
         daoPhoto.location   = self;
     }
+    
+    NSArray<NSDictionary* >* socialAccounts = dictionary[@"socialAccounts"];
+    
+    NSMutableArray<DAOSocialAccount* >* daoSocialAccounts = [NSMutableArray arrayWithCapacity:socialAccounts.count];
+    
+    for (NSDictionary* socialAccount in socialAccounts)
+    {
+        DAOSocialAccount*   daoSocialAccount;
+        
+        if ([socialAccount isKindOfClass:DAOSocialAccount.class])
+        {
+            daoSocialAccount = (DAOSocialAccount*)socialAccount;
+        }
+        else
+        {
+            daoSocialAccount = [DAOSocialAccount dncToDAO:socialAccount];
+        }
+        
+        if (daoSocialAccount)
+        {
+            [daoSocialAccounts addObject:daoSocialAccount];
+        }
+    }
+    
+    self.socialAccounts  = daoSocialAccounts;
     
     self._status    = [self stringFromString:dictionary[@"status"]];
     self._created   = [self timeFromString:dictionary[@"added"]];
