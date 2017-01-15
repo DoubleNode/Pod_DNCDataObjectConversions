@@ -14,7 +14,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-   return [[DAOReview review] dncToDAO:dictionary];
+   return [DAOReview.review dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary

@@ -14,7 +14,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOCheckin checkin] dncToDAO:dictionary];
+    return [DAOCheckin.checkin dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary

@@ -14,7 +14,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOFollow follow] dncToDAO:dictionary];
+    return [DAOFollow.follow dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary

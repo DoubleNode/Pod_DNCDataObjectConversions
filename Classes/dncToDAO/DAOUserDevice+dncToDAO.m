@@ -14,7 +14,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOUserDevice userDevice] dncToDAO:dictionary];
+    return [DAOUserDevice.userDevice dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary

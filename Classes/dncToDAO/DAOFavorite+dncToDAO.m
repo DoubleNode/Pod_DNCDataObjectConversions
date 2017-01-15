@@ -14,14 +14,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    if (!dictionary || [dictionary isKindOfClass:NSNull.class])
-    {
-        return nil;
-    }
-    
-    DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
-
-    return [[DAOFavorite favorite] dncToDAO:dictionary];
+    return [DAOFavorite.favorite dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary

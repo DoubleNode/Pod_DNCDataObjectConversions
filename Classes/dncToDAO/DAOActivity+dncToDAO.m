@@ -24,7 +24,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOActivity activity] dncToDAO:dictionary];
+    return [DAOActivity.activity dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary

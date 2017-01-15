@@ -22,7 +22,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOItem item] dncToDAO:dictionary];
+    return [DAOItem.item dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
@@ -34,20 +34,20 @@
     
     DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
-    NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
-    
     self.id                 = [self idFromString:dictionary[@"id"]];
     self.type               = [self idFromString:dictionary[@"type"]];
     self.name               = [self stringFromString:dictionary[@"name"]];
     self.descriptionString  = [self stringFromString:dictionary[@"description"]];
     self.rating             = [self numberFromString:dictionary[@"rating"]];
     
+    NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
+    
+    self.numCheckins        = [self numberFromString:counts[@"checkins"]];
+    self.numFavorites       = [self numberFromString:counts[@"favorites"]];
     self.numFollowers       = [self numberFromString:counts[@"followers"]];
     self.numRatings         = [self numberFromString:counts[@"ratings"]];
     self.numReviews         = [self numberFromString:counts[@"reviews"]];
-    self.numFavorites       = [self numberFromString:counts[@"favorites"]];
     self.numWishlists       = [self numberFromString:counts[@"wishlists"]];
-    self.numCheckins        = [self numberFromString:counts[@"checkins"]];
     
     self.myFavorite         = [DAOFavorite dncToDAO:dictionary[@"my_favorite"]];
     self.myFollow           = [DAOFollow dncToDAO:dictionary[@"my_follow"]];
@@ -59,25 +59,24 @@
     
     NSMutableArray<DAOLocation* >*  daoLocations = [NSMutableArray arrayWithCapacity:locations.count];
     
-    [locations enumerateObjectsUsingBlock:
-     ^(NSDictionary* _Nonnull location, NSUInteger idx, BOOL* _Nonnull stop)
-     {
-         DAOLocation*    daoLocation;
-         
-         if ([location isKindOfClass:[DAOLocation class]])
-         {
-             daoLocation = (DAOLocation*)location;
-         }
-         else
-         {
-             daoLocation = [DAOLocation dncToDAO:location];
-         }
-         
-         if (daoLocation)
-         {
-             [daoLocations addObject:daoLocation];
-         }
-     }];
+    for (NSDictionary* location in locations)
+    {
+        DAOLocation*    daoLocation;
+        
+        if ([location isKindOfClass:DAOLocation.class])
+        {
+            daoLocation = (DAOLocation*)location;
+        }
+        else
+        {
+            daoLocation = [DAOLocation dncToDAO:location];
+        }
+        
+        if (daoLocation)
+        {
+            [daoLocations addObject:daoLocation];
+        }
+    }
     
     self.locations  = daoLocations;
     
@@ -124,11 +123,10 @@
     
     self.photos = daoPhotos;
     
-    [self.photos enumerateObjectsUsingBlock:
-     ^(DAOPhoto* _Nonnull daoPhoto, NSUInteger idx, BOOL* _Nonnull stop)
-     {
-         daoPhoto.item  = self;
-     }];
+    for (DAOPhoto* daoPhoto in self.photos)
+    {
+        daoPhoto.item  = self;
+    }
     
     self._status    = [self stringFromString:dictionary[@"status"]];
     self._created   = [self timeFromString:dictionary[@"added"]];

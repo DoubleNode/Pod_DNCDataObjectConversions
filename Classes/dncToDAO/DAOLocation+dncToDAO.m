@@ -16,7 +16,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOLocation location] dncToDAO:dictionary];
+    return [DAOLocation.location dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
@@ -100,11 +100,10 @@
     
     self.photos = daoPhotos;
 
-    [self.photos enumerateObjectsUsingBlock:
-     ^(DAOPhoto* _Nonnull daoPhoto, NSUInteger idx, BOOL* _Nonnull stop)
-     {
-         daoPhoto.location  = self;
-     }];
+    for (DAOPhoto* daoPhoto in self.photos)
+    {
+        daoPhoto.location   = self;
+    }
     
     self._status    = [self stringFromString:dictionary[@"status"]];
     self._created   = [self timeFromString:dictionary[@"added"]];

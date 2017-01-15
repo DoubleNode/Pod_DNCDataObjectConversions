@@ -16,7 +16,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOPhoto photo] dncToDAO:dictionary];
+    return [DAOPhoto.photo dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary

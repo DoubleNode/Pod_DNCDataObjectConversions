@@ -16,7 +16,7 @@
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAOAuth auth] dncToDAO:dictionary];
+    return [DAOAuth.auth dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
