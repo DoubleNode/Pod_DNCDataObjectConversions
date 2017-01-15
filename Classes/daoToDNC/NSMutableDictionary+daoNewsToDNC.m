@@ -18,7 +18,7 @@
 
 + (instancetype)daoNewsToDNC:(DAONews*)object
 {
-    return [[NSMutableDictionary dictionary] daoNewsToDNC:object];
+    return [NSMutableDictionary.dictionary daoNewsToDNC:object];
 }
 
 - (instancetype)daoNewsToDNC:(DAONews*)object
@@ -28,7 +28,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAONews class]], DNCLD_DAO, @"object is not a DAONews");
+    DNCAssert([object isKindOfClass:DAONews.class], DNCLD_DAO, @"object is not a DAONews");
     
     /*
     self.id         = [self idFromString:item[@"id"]];

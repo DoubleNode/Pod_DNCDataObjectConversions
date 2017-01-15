@@ -35,7 +35,7 @@
 
 + (instancetype)daoActivityToDNC:(DAOActivity*)object
 {
-    return [[NSMutableDictionary dictionary] daoActivityToDNC:object];
+    return [NSMutableDictionary.dictionary daoActivityToDNC:object];
 }
 
 - (instancetype)daoActivityToDNC:(DAOActivity*)object
@@ -45,13 +45,13 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOActivity class]], DNCLD_DAO, @"object is not a DAOActivity");
+    DNCAssert([object isKindOfClass:DAOActivity.class], DNCLD_DAO, @"object is not a DAOActivity");
     
     self[@"id"]         = object.id;
     self[@"activity"]   = object.code;
     self[@"type"]       = object.type;
 
-    NSMutableDictionary*    data    = [NSMutableDictionary dictionary];
+    NSMutableDictionary*    data    = NSMutableDictionary.dictionary;
     
     if ([object.code isEqualToString:kActivityCodeCheckin])
     {

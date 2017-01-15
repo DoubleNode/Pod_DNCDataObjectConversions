@@ -25,7 +25,7 @@
 
 + (instancetype)daoCheckinToDNC:(DAOCheckin*)object
 {
-    return [[NSMutableDictionary dictionary] daoCheckinToDNC:object];
+    return [NSMutableDictionary.dictionary daoCheckinToDNC:object];
 }
 
 - (instancetype)daoCheckinToDNC:(DAOCheckin*)object
@@ -35,7 +35,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOCheckin class]], DNCLD_DAO, @"object is not a DAOCheckin");
+    DNCAssert([object isKindOfClass:DAOCheckin.class], DNCLD_DAO, @"object is not a DAOCheckin");
     
     self[@"id"] = object.id;
     

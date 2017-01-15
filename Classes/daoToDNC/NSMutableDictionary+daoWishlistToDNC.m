@@ -16,7 +16,7 @@
 
 + (instancetype)daoWishlistToDNC:(DAOWishlist*)object
 {
-    return [[NSMutableDictionary dictionary] daoWishlistToDNC:object];
+    return [NSMutableDictionary.dictionary daoWishlistToDNC:object];
 }
 
 - (instancetype)daoWishlistToDNC:(DAOWishlist*)object
@@ -26,7 +26,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOWishlist class]], DNCLD_DAO, @"object is not a DAOWishlist");
+    DNCAssert([object isKindOfClass:DAOWishlist.class], DNCLD_DAO, @"object is not a DAOWishlist");
     
     /*
     self.id         = [self idFromString:item[@"id"]];

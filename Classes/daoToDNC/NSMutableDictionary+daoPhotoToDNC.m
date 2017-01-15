@@ -18,7 +18,7 @@
 
 + (instancetype)daoPhotoToDNC:(DAOPhoto*)object
 {
-    return [[NSMutableDictionary dictionary] daoPhotoToDNC:object];
+    return [NSMutableDictionary.dictionary daoPhotoToDNC:object];
 }
 
 - (instancetype)daoPhotoToDNC:(DAOPhoto*)object
@@ -28,7 +28,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOPhoto class]], DNCLD_DAO, @"object is not a DAOPhoto");
+    DNCAssert([object isKindOfClass:DAOPhoto.class], DNCLD_DAO, @"object is not a DAOPhoto");
     
     /*
     self.id             = [self idFromString:item[@"id"]];

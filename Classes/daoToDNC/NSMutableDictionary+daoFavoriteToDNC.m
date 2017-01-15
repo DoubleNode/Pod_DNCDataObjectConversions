@@ -21,7 +21,7 @@
 
 + (instancetype)daoFavoriteToDNC:(DAOFavorite*)object
 {
-    return [[NSMutableDictionary dictionary] daoFavoriteToDNC:object];
+    return [NSMutableDictionary.dictionary daoFavoriteToDNC:object];
 }
 
 - (instancetype)daoFavoriteToDNC:(DAOFavorite*)object
@@ -31,7 +31,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOFavorite class]], DNCLD_DAO, @"object is not a DAOFavorite");
+    DNCAssert([object isKindOfClass:DAOFavorite.class], DNCLD_DAO, @"object is not a DAOFavorite");
     
     self[@"id"] = object.id;
     

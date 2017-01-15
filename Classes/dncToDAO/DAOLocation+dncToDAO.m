@@ -21,12 +21,12 @@
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    if (!dictionary || [dictionary isKindOfClass:[NSNull class]])
+    if (!dictionary || [dictionary isKindOfClass:NSNull.class])
     {
         return nil;
     }
     
-    DNCAssert([dictionary isKindOfClass:[NSDictionary class]], DNCLD_DAO, @"dictionary is not a NSDictionary");
+    DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
     self.id         = [self idFromString:dictionary[@"id"]];
     self.externalId = dictionary[@"bdb_id"];
@@ -44,7 +44,7 @@
         self.website            = [self urlFromString:dictionary[@"website"]];
     }
     
-    self.followingFlag        = ([dictionary[@"my_follow"] isKindOfClass:[NSDictionary class]] ? YES : NO);
+    self.followingFlag        = ([dictionary[@"my_follow"] isKindOfClass:NSDictionary.class] ? YES : NO);
     
     NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
     if (counts)
@@ -108,7 +108,7 @@
     
     self._status    = [self stringFromString:dictionary[@"status"]];
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._synced    = [NSDate date];
+    self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
     
     return self.id ? self : nil;

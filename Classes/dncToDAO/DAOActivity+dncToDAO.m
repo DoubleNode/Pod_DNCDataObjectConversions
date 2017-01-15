@@ -29,12 +29,12 @@
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    if (!dictionary || [dictionary isKindOfClass:[NSNull class]])
+    if (!dictionary || [dictionary isKindOfClass:NSNull.class])
     {
         return nil;
     }
     
-    DNCAssert([dictionary isKindOfClass:[NSDictionary class]], DNCLD_DAO, @"dictionary is not a NSDictionary");
+    DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
     self.id         = [self idFromString:dictionary[@"id"]];
     self.code       = [self stringFromString:dictionary[@"activity"]];
@@ -203,7 +203,7 @@
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._synced    = [NSDate date];
+    self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
     
     return self.id ? self : nil;

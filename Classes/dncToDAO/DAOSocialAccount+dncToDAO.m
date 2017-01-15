@@ -1,5 +1,5 @@
 //
-//  DAONews+dncToDAO.m
+//  DAOSocialAccount+dncToDAO.m
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,15 +8,13 @@
 
 @import DNCore;
 
-#import "DAONews+dncToDAO.h"
+#import "DAOSocialAccount+dncToDAO.h"
 
-#import "DAOFavorite+dncToDAO.h"
-
-@implementation DAONews (dncToDAO)
+@implementation DAOSocialAccount (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [[DAONews news] dncToDAO:dictionary];
+    return [DAOSocialAccount.socialAccount dncToDAO:dictionary];
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
@@ -30,25 +28,18 @@
     
     self.id         = [self idFromString:dictionary[@"id"]];
 
-    self.title      = [self stringFromString:dictionary[@"title"]];
-    self.body       = [self stringFromString:dictionary[@"body"]];
-    self.bodyShort  = [self stringFromString:dictionary[@"body_short"]];
+    self.type       = [self idFromString:dictionary[@"type"]];
+    self.handle     = [self idFromString:dictionary[@"handle"]];
+    self.url        = [self idFromString:dictionary[@"url"]];
 
-    self.imageUrl   = [self urlFromString:dictionary[@"image"]];
-
-    self.expiration = [self timeFromString:dictionary[@"expiration"]];
-
-    NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
-    
-    self.numFavorites   = [self numberFromString:counts[@"favorites"]];
-    
-    self.myFavorite     = [DAOFavorite dncToDAO:dictionary[@"my_favorite"]];
+    self.locationId = [self idFromString:dictionary[@"location_id"]];
+    self.userId     = [self idFromString:dictionary[@"user_id"]];
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    
+
     return self.id ? self : nil;
 }
 

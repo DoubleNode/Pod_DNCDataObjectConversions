@@ -18,7 +18,7 @@
 
 + (instancetype)daoLocationToDNC:(DAOLocation*)object
 {
-    return [[NSMutableDictionary dictionary] daoLocationToDNC:object];
+    return [NSMutableDictionary.dictionary daoLocationToDNC:object];
 }
 
 - (instancetype)daoLocationToDNC:(DAOLocation*)object
@@ -28,7 +28,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOLocation class]], DNCLD_DAO, @"object is not a DAOLocation");
+    DNCAssert([object isKindOfClass:DAOLocation.class], DNCLD_DAO, @"object is not a DAOLocation");
     
     /*
     self.id         = [self idFromString:item[@"id"]];
@@ -47,7 +47,7 @@
         self.website            = [self urlFromString:item[@"website"]];
     }
     
-    self.followingFlag        = ([item[@"my_follow"] isKindOfClass:[NSDictionary class]] ? YES : NO);
+    self.followingFlag        = ([item[@"my_follow"] isKindOfClass:NSDictionary.class] ? YES : NO);
     
     NSMutableDictionary*    brewery = [item[@"brewery"] mutableCopy];
     

@@ -16,7 +16,7 @@
 
 + (instancetype)daoFollowToDNC:(DAOFollow*)object
 {
-    return [[NSMutableDictionary dictionary] daoFollowToDNC:object];
+    return [NSMutableDictionary.dictionary daoFollowToDNC:object];
 }
 
 - (instancetype)daoFollowToDNC:(DAOFollow*)object
@@ -26,7 +26,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOFollow class]], DNCLD_DAO, @"object is not a DAOFollow");
+    DNCAssert([object isKindOfClass:DAOFollow.class], DNCLD_DAO, @"object is not a DAOFollow");
     
     /*
     self.id         = [self idFromString:item[@"id"]];

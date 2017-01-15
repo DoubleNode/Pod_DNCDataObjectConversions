@@ -16,7 +16,7 @@
 
 + (instancetype)daoReviewToDNC:(DAOReview*)object
 {
-    return [[NSMutableDictionary dictionary] daoReviewToDNC:object];
+    return [NSMutableDictionary.dictionary daoReviewToDNC:object];
 }
 
 - (instancetype)daoReviewToDNC:(DAOReview*)object
@@ -26,7 +26,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOReview class]], DNCLD_DAO, @"object is not a DAOReview");
+    DNCAssert([object isKindOfClass:DAOReview.class], DNCLD_DAO, @"object is not a DAOReview");
     
     /*
     self.id        = [self idFromString:item[@"id"]];

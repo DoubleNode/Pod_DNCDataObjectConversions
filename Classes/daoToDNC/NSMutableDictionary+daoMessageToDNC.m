@@ -16,7 +16,7 @@
 
 + (instancetype)daoMessageToDNC:(DAOMessage*)object
 {
-    return [[NSMutableDictionary dictionary] daoMessageToDNC:object];
+    return [NSMutableDictionary.dictionary daoMessageToDNC:object];
 }
 
 - (instancetype)daoMessageToDNC:(DAOMessage*)object
@@ -26,7 +26,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOMessage class]], DNCLD_DAO, @"object is not a DAOMessage");
+    DNCAssert([object isKindOfClass:DAOMessage.class], DNCLD_DAO, @"object is not a DAOMessage");
     
     /*
     self.id         = [self idFromString:item[@"id"]];

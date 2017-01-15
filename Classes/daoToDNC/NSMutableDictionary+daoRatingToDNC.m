@@ -16,7 +16,7 @@
 
 + (instancetype)daoRatingToDNC:(DAORating*)object
 {
-    return [[NSMutableDictionary dictionary] daoRatingToDNC:object];
+    return [NSMutableDictionary.dictionary daoRatingToDNC:object];
 }
 
 - (instancetype)daoRatingToDNC:(DAORating*)object
@@ -26,7 +26,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAORating class]], DNCLD_DAO, @"object is not a DAORating");
+    DNCAssert([object isKindOfClass:DAORating.class], DNCLD_DAO, @"object is not a DAORating");
     
     /*
     self.id         = [self idFromString:item[@"id"]];

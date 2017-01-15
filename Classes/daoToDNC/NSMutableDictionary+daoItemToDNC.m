@@ -23,7 +23,7 @@
 
 + (instancetype)daoItemToDNC:(DAOItem*)object
 {
-    return [[NSMutableDictionary dictionary] daoItemToDNC:object];
+    return [NSMutableDictionary.dictionary daoItemToDNC:object];
 }
 
 - (instancetype)daoItemToDNC:(DAOItem*)object
@@ -33,7 +33,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOItem class]], DNCLD_DAO, @"object is not a DAOItem");
+    DNCAssert([object isKindOfClass:DAOItem.class], DNCLD_DAO, @"object is not a DAOItem");
     
     /*
     NSMutableDictionary*    beer    = [item[@"beer"] mutableCopy];

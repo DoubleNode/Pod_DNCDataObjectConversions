@@ -19,7 +19,7 @@
 
 + (instancetype)daoAuthToDNC:(DAOAuth*)object
 {
-    return [[NSMutableDictionary dictionary] daoAuthToDNC:object];
+    return [NSMutableDictionary.dictionary daoAuthToDNC:object];
 }
 
 - (instancetype)daoAuthToDNC:(DAOAuth*)object
@@ -29,7 +29,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOAuth class]], DNCLD_DAO, @"object is not a DAOAuth");
+    DNCAssert([object isKindOfClass:DAOAuth.class], DNCLD_DAO, @"object is not a DAOAuth");
     
     self[@"id"]         = object.id;
     self[@"type"]       = object.type;

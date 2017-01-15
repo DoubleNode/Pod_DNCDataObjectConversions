@@ -16,7 +16,7 @@
 
 + (instancetype)daoUserDeviceToDNC:(DAOUserDevice*)object
 {
-    return [[NSMutableDictionary dictionary] daoUserDeviceToDNC:object];
+    return [NSMutableDictionary.dictionary daoUserDeviceToDNC:object];
 }
 
 - (instancetype)daoUserDeviceToDNC:(DAOUserDevice*)object
@@ -26,7 +26,7 @@
         return nil;
     }
     
-    DNCAssert([object isKindOfClass:[DAOUserDevice class]], DNCLD_DAO, @"object is not a DAOUserDevice");
+    DNCAssert([object isKindOfClass:DAOUserDevice.class], DNCLD_DAO, @"object is not a DAOUserDevice");
     
     /*
     self.id         = [self idFromString:item[@"id"]];
