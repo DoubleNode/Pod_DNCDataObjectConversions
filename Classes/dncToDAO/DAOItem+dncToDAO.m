@@ -108,28 +108,24 @@
     
     NSMutableArray<DAOPhoto* >* daoPhotos = [NSMutableArray array];
     
-    NSArray*    photosArray = dictionary[@"options"];
-    if (photosArray)
+    NSDictionary* photoDictionary = dictionary[@"photo"];
+    if (photoDictionary)
     {
-        [photosArray enumerateObjectsUsingBlock:
-         ^(NSDictionary* _Nonnull photoDictionary, NSUInteger idx, BOOL* _Nonnull stop)
-         {
-             if (photoDictionary[@"path"] && ![photoDictionary[@"path"] isEqual:[NSNull null]])
-             {
-                 DAOPhoto*   daoPhoto   = [DAOPhoto dncToDAO:photoDictionary];
-                 if (daoPhoto)
-                 {
-                     [daoPhotos addObject:daoPhoto];
-                 }
-             }
-         }];
+        if (photoDictionary[@"path"] && ![photoDictionary[@"path"] isEqual:[NSNull null]])
+        {
+            DAOPhoto*   daoPhoto   = [DAOPhoto dncToDAO:photoDictionary];
+            if (daoPhoto)
+            {
+                [daoPhotos addObject:daoPhoto];
+            }
+        }
     }
     
     self.photos = daoPhotos;
     
     for (DAOPhoto* daoPhoto in self.photos)
     {
-        daoPhoto.item  = self;
+        daoPhoto.item   = self;
     }
     
     self._status    = [self stringFromString:dictionary[@"status"]];
