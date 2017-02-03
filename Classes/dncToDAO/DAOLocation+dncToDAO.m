@@ -85,25 +85,33 @@
     self.options    = options;
     
     NSMutableArray<DAOPhoto* >* daoPhotos = [NSMutableArray array];
-
-    NSDictionary* photoDictionary = dictionary[@"photo"];
-    if (photoDictionary)
+    
+    NSArray*    photosArray = dictionary[@"photo"];
+    if ([photosArray isKindOfClass:NSDictionary.class])
     {
-        if (photoDictionary[@"path"] && ![photoDictionary[@"path"] isEqual:[NSNull null]])
-        {
-            DAOPhoto*   daoPhoto   = [DAOPhoto dncToDAO:photoDictionary];
-            if (daoPhoto)
-            {
-                [daoPhotos addObject:daoPhoto];
-            }
-        }
+        photosArray = @[ photosArray ];
+    }
+    if (photosArray)
+    {
+        [photosArray enumerateObjectsUsingBlock:
+         ^(NSDictionary* _Nonnull photoDictionary, NSUInteger idx, BOOL* _Nonnull stop)
+         {
+             if (photoDictionary[@"path"] && ![photoDictionary[@"path"] isEqual:[NSNull null]])
+             {
+                 DAOPhoto*   daoPhoto   = [DAOPhoto dncToDAO:photoDictionary];
+                 if (daoPhoto)
+                 {
+                     [daoPhotos addObject:daoPhoto];
+                 }
+             }
+         }];
     }
     
     self.photos = daoPhotos;
-
+    
     for (DAOPhoto* daoPhoto in self.photos)
     {
-        daoPhoto.location   = self;
+        daoPhoto.location  = self;
     }
     
     NSArray<NSDictionary* >* socialAccounts = dictionary[@"socialAccounts"];
