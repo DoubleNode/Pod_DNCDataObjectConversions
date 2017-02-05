@@ -40,7 +40,10 @@
     {
         self.avatarId   = [self idFromString:dictionary[@"avatar"][@"id"]];
     }
-    
+
+    self.verifyKey      = [self stringFromString:dictionary[@"verify_key"]];
+    self.verifiedDate   = [self timeFromString:dictionary[@"verify_date"]];
+
     NSMutableDictionary*    counts             = [dictionary[@"counts"] mutableCopy];
     NSMutableDictionary*    usersCounts        = [counts[@"users"] mutableCopy];
     NSMutableDictionary*    locationsCounts    = [counts[@"locations"] mutableCopy];
