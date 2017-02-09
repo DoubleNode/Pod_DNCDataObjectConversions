@@ -81,7 +81,7 @@
              NSString*  optionId    = [self idFromString:option[@"id"]];
 
              id value   = option[@"value_long"];
-             if (!value)
+             if (!value || [value isKindOfClass:NSNull.class])
              {
                  value = option[@"value"];
              }
