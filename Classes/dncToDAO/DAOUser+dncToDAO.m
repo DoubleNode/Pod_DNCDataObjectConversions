@@ -80,10 +80,10 @@
              NSString*  key         = [self stringFromString:option[@"key"]];
              NSString*  optionId    = [self idFromString:option[@"id"]];
 
-             id value   = option[@"value"];
+             id value   = option[@"value_long"];
              if (!value)
              {
-                 value = option[@"value_long"];
+                 value = option[@"value"];
              }
              
              options[key]   = value;
