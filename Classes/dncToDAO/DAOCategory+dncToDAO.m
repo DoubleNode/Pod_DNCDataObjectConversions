@@ -11,7 +11,9 @@
 #import "DAOCategory+dncToDAO.h"
 #import "DAOFavorite+dncToDAO.h"
 #import "DAOFollow+dncToDAO.h"
+#import "DAOItem+dncToDAO.h"
 #import "DAOLocation+dncToDAO.h"
+#import "DAOPhoto+dncToDAO.h"
 #import "DAORating+dncToDAO.h"
 #import "DAOReview+dncToDAO.h"
 #import "DAOWishlist+dncToDAO.h"
@@ -76,6 +78,60 @@
     
     self.optionIds  = optionIds;
     self.options    = options;
+
+    {
+        NSArray<NSDictionary* >* favorites  = dictionary[@"favorites"];
+        
+        NSMutableArray<DAOFavorite* >*  daoFavorites = [NSMutableArray arrayWithCapacity:favorites.count];
+        
+        for (NSDictionary* favorite in favorites)
+        {
+            DAOFavorite*    daoFavorite;
+            
+            if ([favorite isKindOfClass:DAOFavorite.class])
+            {
+                daoFavorite = (DAOFavorite*)favorite;
+            }
+            else
+            {
+                daoFavorite = [DAOFavorite dncToDAO:favorite];
+            }
+            
+            if (daoFavorite)
+            {
+                [daoFavorites addObject:daoFavorite];
+            }
+        }
+        
+        self.favorites  = daoFavorites;
+    }
+    
+    {
+        NSArray<NSDictionary* >* items  = dictionary[@"items"];
+        
+        NSMutableArray<DAOItem* >*  daoItems = [NSMutableArray arrayWithCapacity:items.count];
+        
+        for (NSDictionary* item in items)
+        {
+            DAOItem*    daoItem;
+            
+            if ([item isKindOfClass:DAOItem.class])
+            {
+                daoItem = (DAOItem*)item;
+            }
+            else
+            {
+                daoItem = [DAOItem dncToDAO:item];
+            }
+            
+            if (daoItem)
+            {
+                [daoItems addObject:daoItem];
+            }
+        }
+        
+        self.items  = daoItems;
+    }
     
     {
         NSArray<NSDictionary* >* locations  = dictionary[@"locations"];
@@ -102,6 +158,65 @@
         }
         
         self.locations  = daoLocations;
+    }
+    
+    {
+        NSArray<NSDictionary* >*    photos = dictionary[@"photo"];
+        
+        NSMutableArray<DAOPhoto* >* daoPhotos = [NSMutableArray arrayWithCapacity:photos.count];
+        
+        if ([photos isKindOfClass:NSDictionary.class])
+        {
+            photos = @[ photos ];
+        }
+        if (photos)
+        {
+            for (NSDictionary* photo in photos)
+            {
+                if (photo[@"path"] && ![photo[@"path"] isEqual:NSNull.null])
+                {
+                    DAOPhoto*   daoPhoto   = [DAOPhoto dncToDAO:photo];
+                    if (daoPhoto)
+                    {
+                        [daoPhotos addObject:daoPhoto];
+                    }
+                }
+            }
+        }
+        
+        self.photos = daoPhotos;
+        
+        for (DAOPhoto* daoPhoto in self.photos)
+        {
+            daoPhoto.category  = self;
+        }
+    }
+    
+    {
+        NSArray<NSDictionary* >* wishlists  = dictionary[@"wishlists"];
+        
+        NSMutableArray<DAOWishlist* >*  daoWishlists = [NSMutableArray arrayWithCapacity:wishlists.count];
+        
+        for (NSDictionary* wishlist in wishlists)
+        {
+            DAOWishlist*    daoWishlist;
+            
+            if ([wishlist isKindOfClass:DAOWishlist.class])
+            {
+                daoWishlist = (DAOWishlist*)wishlist;
+            }
+            else
+            {
+                daoWishlist = [DAOWishlist dncToDAO:wishlist];
+            }
+            
+            if (daoWishlist)
+            {
+                [daoWishlists addObject:daoWishlist];
+            }
+        }
+        
+        self.wishlists  = daoWishlists;
     }
     
     self._status    = @"success";
