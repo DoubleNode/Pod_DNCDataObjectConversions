@@ -161,7 +161,7 @@
     }
     
     {
-        NSArray<NSDictionary* >*    photos = dictionary[@"photo"];
+        NSArray<NSDictionary* >*    photos = dictionary[@"photos"];
         
         NSMutableArray<DAOPhoto* >* daoPhotos = [NSMutableArray arrayWithCapacity:photos.count];
         
