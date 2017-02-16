@@ -43,9 +43,12 @@
     
     self.numCheckins        = [self numberFromString:counts[@"checkins"]];
     self.numFavorites       = [self numberFromString:counts[@"favorites"]];
+    self.numFlags           = [self numberFromString:counts[@"flags"]];
     self.numFollowers       = [self numberFromString:counts[@"followers"]];
+    self.numItems           = [self numberFromString:counts[@"items"]];
     self.numRatings         = [self numberFromString:counts[@"ratings"]];
     self.numReviews         = [self numberFromString:counts[@"reviews"]];
+    self.numTags            = [self numberFromString:counts[@"tags"]];
     self.numWishlists       = [self numberFromString:counts[@"wishlists"]];
 
     self.myFavorite         = [DAOFavorite dncToDAO:dictionary[@"my_favorite"]];
