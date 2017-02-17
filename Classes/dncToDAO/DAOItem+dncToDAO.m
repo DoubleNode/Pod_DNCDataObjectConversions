@@ -7,6 +7,7 @@
 //
 
 @import DNCore;
+#import <DNCDataObjects/DAOUser.h>
 
 #import "DAOItem+dncToDAO.h"
 
@@ -224,8 +225,10 @@
     
     self._status    = [self stringFromString:dictionary[@"status"]];
     self._created   = [self timeFromString:dictionary[@"added"]];
+    self._createdBy = DAOUser.user;     self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
+    self._updatedBy = DAOUser.user;     self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
     
     return self.id ? self : nil;
 }
