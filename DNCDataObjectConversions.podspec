@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DNCDataObjectConversions"
-  s.version      = "0.0.16"
+  s.version      = "0.0.17"
   s.summary      = "A base collection of default DNCore Data Object Conversions."
 
   # This description is used to generate tags and improve search results.
