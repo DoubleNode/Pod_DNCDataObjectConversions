@@ -49,6 +49,7 @@
         self.descriptionString  = [self stringFromString:dictionary[@"description"]];
         self.website            = [self urlFromString:dictionary[@"website"]];
     }
+    self.rating     = [self numberFromString:dictionary[@"rating"]];
     
     self.followingFlag        = ([dictionary[@"my_follow"] isKindOfClass:NSDictionary.class] ? YES : NO);
     

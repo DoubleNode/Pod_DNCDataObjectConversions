@@ -39,6 +39,7 @@
 
     self.title              = [self idFromString:dictionary[@"title"]];
     self.descriptionString  = [self idFromString:dictionary[@"description"]];
+    self.rating             = [self numberFromString:dictionary[@"rating"]];
 
     NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
     

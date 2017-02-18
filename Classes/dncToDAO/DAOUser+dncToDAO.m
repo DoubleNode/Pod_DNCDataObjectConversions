@@ -40,6 +40,7 @@
     {
         self.avatarId   = [self idFromString:dictionary[@"avatar"][@"id"]];
     }
+    self.rating         = [self numberFromString:dictionary[@"rating"]];
 
     self.verifyKey      = [self stringFromString:dictionary[@"verify_key"]];
     self.verifiedDate   = [self timeFromString:dictionary[@"verify_date"]];
