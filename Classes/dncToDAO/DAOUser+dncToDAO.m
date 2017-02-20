@@ -32,7 +32,7 @@
     self.me             = [dictionary[@"me"] isEqualToNumber:@1];
     self.name           = [self stringFromString:dictionary[@"name"]];
     self.username       = [self stringFromString:dictionary[@"login"]];
-    self.location       = @"";
+    self.location       = [self stringFromString:dictionary[@"location"]];
     self.email          = [self stringFromString:dictionary[@"email"]];
     self.handle         = [self stringFromString:dictionary[@"handle"]];
     self.phoneNumber    = [self stringFromString:dictionary[@"phone"]];
