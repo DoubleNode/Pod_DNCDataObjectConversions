@@ -51,6 +51,17 @@
     }
     self.rating     = [self numberFromString:dictionary[@"rating"]];
     
+    self.phone              = [self stringFromString:dictionary[@"phone"]];
+    self.address            = [self stringFromString:dictionary[@"address"]];
+    self.address2           = [self stringFromString:dictionary[@"address2"]];
+    self.city               = [self stringFromString:dictionary[@"city"]];
+    self.state              = [self stringFromString:dictionary[@"state"]];
+    self.postalCode         = [self stringFromString:dictionary[@"postalcode"]];
+    self.country            = [self stringFromString:dictionary[@"country"]];
+    self.geohash            = [self stringFromString:dictionary[@"geohash"]];
+    self.latitude           = [self numberFromString:dictionary[@"latitude"]];
+    self.longitude          = [self numberFromString:dictionary[@"longitude"]];
+
     self.followingFlag        = ([dictionary[@"my_follow"] isKindOfClass:NSDictionary.class] ? YES : NO);
     
     NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
