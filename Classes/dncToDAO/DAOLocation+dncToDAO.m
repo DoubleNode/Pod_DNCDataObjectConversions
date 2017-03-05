@@ -51,6 +51,12 @@
     }
     self.rating     = [self numberFromString:dictionary[@"rating"]];
     
+    {
+        NSDictionary*   photo   = dictionary[@"photo"];
+        
+        self.defaultPhoto   = [DAOPhoto dncToDAO:photo];
+    }
+    
     self.phone              = [self stringFromString:dictionary[@"phone"]];
     self.address            = [self stringFromString:dictionary[@"address"]];
     self.address2           = [self stringFromString:dictionary[@"address2"]];
@@ -182,6 +188,7 @@
         self.items  = daoItems;
     }
     
+    if (!self.photos.count)
     {
         NSArray<NSDictionary* >*    photos = dictionary[@"photo"];
         
