@@ -6,7 +6,7 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <DNCDataObjects/DAOFavorite.h>
+#import <DNCDataObjects/DAOFlag.h>
 
 @interface DAOFlag (dncToDAO)
 
