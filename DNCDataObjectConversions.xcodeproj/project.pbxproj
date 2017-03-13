@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A02B4DA1E762A7400161A8A /* DAOFlag+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02B4D91E762A7400161A8A /* DAOFlag+dncToDAO.m */; };
 		6A81CC9D1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CC9C1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m */; };
 		6A81CCA01E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CC9F1E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.m */; };
 		6A81CCAF1E2B413400C4613A /* NSMutableDictionary+daoCategoryToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CCAE1E2B413400C4613A /* NSMutableDictionary+daoCategoryToDNC.m */; };
@@ -67,6 +68,8 @@
 		309A2ED88DC2F67437E986B3 /* Pods_DNCDataObjectConversions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNCDataObjectConversions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D49C282B2EA227D2686F95B /* Pods-DNCDataObjectConversions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversions.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversions/Pods-DNCDataObjectConversions.release.xcconfig"; sourceTree = "<group>"; };
 		598C4F53905420020C65F4A2 /* Pods-DNCDataObjectConversionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversionsTests/Pods-DNCDataObjectConversionsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A02B4D81E762A7400161A8A /* DAOFlag+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOFlag+dncToDAO.h"; path = "Classes/dncToDAO/DAOFlag+dncToDAO.h"; sourceTree = "<group>"; };
+		6A02B4D91E762A7400161A8A /* DAOFlag+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOFlag+dncToDAO.m"; path = "Classes/dncToDAO/DAOFlag+dncToDAO.m"; sourceTree = "<group>"; };
 		6A81CC9B1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOSocialAccount+dncToDAO.h"; path = "Classes/dncToDAO/DAOSocialAccount+dncToDAO.h"; sourceTree = "<group>"; };
 		6A81CC9C1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOSocialAccount+dncToDAO.m"; path = "Classes/dncToDAO/DAOSocialAccount+dncToDAO.m"; sourceTree = "<group>"; };
 		6A81CC9E1E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoSocialAccountToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoSocialAccountToDNC.h"; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				6AD37F621DCE610E00FFF836 /* DAOCheckin+dncToDAO.m */,
 				6AD37F631DCE610E00FFF836 /* DAOFavorite+dncToDAO.h */,
 				6AD37F641DCE610E00FFF836 /* DAOFavorite+dncToDAO.m */,
+				6A02B4D81E762A7400161A8A /* DAOFlag+dncToDAO.h */,
+				6A02B4D91E762A7400161A8A /* DAOFlag+dncToDAO.m */,
 				6AD37F651DCE610E00FFF836 /* DAOFollow+dncToDAO.h */,
 				6AD37F661DCE610E00FFF836 /* DAOFollow+dncToDAO.m */,
 				6AD37F671DCE610E00FFF836 /* DAOItem+dncToDAO.h */,
@@ -563,6 +568,7 @@
 				6A81CCA01E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.m in Sources */,
 				6AD37F0F1DCE606900FFF836 /* ViewController.m in Sources */,
 				6AD37F4E1DCE60FF00FFF836 /* NSMutableDictionary+daoActivityToDNC.m in Sources */,
+				6A02B4DA1E762A7400161A8A /* DAOFlag+dncToDAO.m in Sources */,
 				6AD37F571DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.m in Sources */,
 				6AD37F501DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.m in Sources */,
 				6AD37F851DCE610E00FFF836 /* DAORating+dncToDAO.m in Sources */,

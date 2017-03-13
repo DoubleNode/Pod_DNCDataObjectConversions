@@ -18,6 +18,11 @@
     return [DAOCheckin.checkin dncToDAO:dictionary];
 }
 
+- (DAOUser*)createUser
+{
+    return DAOUser.user;
+}
+
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
     if (!dictionary || [dictionary isKindOfClass:NSNull.class])
@@ -48,10 +53,10 @@
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = DAOUser.user;     self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = DAOUser.user;     self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
 
     return self.id ? self : nil;
 }

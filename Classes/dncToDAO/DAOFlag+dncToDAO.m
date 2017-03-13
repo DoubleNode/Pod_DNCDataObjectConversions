@@ -1,5 +1,5 @@
 //
-//  DAOPhoto+dncToDAO.m
+//  DAOFlag+dncToDAO.m
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -9,15 +9,13 @@
 @import DNCore;
 #import <DNCDataObjects/DAOUser.h>
 
-#import "DAOPhoto+dncToDAO.h"
+#import "DAOFlag+dncToDAO.h"
 
-#import "DAOFavorite+dncToDAO.h"
-
-@implementation DAOPhoto (dncToDAO)
+@implementation DAOFlag (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [DAOPhoto.photo dncToDAO:dictionary];
+    return [DAOFlag.flag dncToDAO:dictionary];
 }
 
 - (DAOUser*)createUser
@@ -34,16 +32,19 @@
     
     DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
-    self.id             = [self idFromString:dictionary[@"id"]];
-    self.url            = [self urlFromString:dictionary[@"path"]];
-    self.url_preload    = [self urlFromString:dictionary[@"path_preload"]];
-    self.comment        = [self stringFromString:dictionary[@"comment"]];
-    self.userId         = [self idFromString:dictionary[@"user_id"]];
+    self.id         = [self idFromString:dictionary[@"id"]];
+    
+    self.action     = [self idFromString:dictionary[@"action"]];
+    self.text       = [self idFromString:dictionary[@"text"]];
     
     NSString*   type    = [self stringFromString:dictionary[@"type"]];
-    if ([type isEqualToString:@"review"])
+    if ([type isEqualToString:@"activity"])
     {
-        self.reviewId   = [self idFromString:dictionary[@"type_id"]];
+        self.activityId = [self idFromString:dictionary[@"type_id"]];
+    }
+    if ([type isEqualToString:@"category"])
+    {
+        self.categoryId = [self idFromString:dictionary[@"type_id"]];
     }
     else if ([type isEqualToString:@"item"])
     {
@@ -53,16 +54,22 @@
     {
         self.locationId = [self idFromString:dictionary[@"type_id"]];
     }
+    else if ([type isEqualToString:@"message"])
+    {
+        self.messageId  = [self idFromString:dictionary[@"type_id"]];
+    }
+    else if ([type isEqualToString:@"news"])
+    {
+        self.newsId     = [self idFromString:dictionary[@"type_id"]];
+    }
+    else if ([type isEqualToString:@"photo"])
+    {
+        self.photoId    = [self idFromString:dictionary[@"type_id"]];
+    }
     else if ([type isEqualToString:@"user"])
     {
         self.userId     = [self idFromString:dictionary[@"type_id"]];
     }
-    
-    NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
-    
-    self.numFavorites   = [self numberFromString:counts[@"favorites"]];
-    
-    self.myFavorite     = [DAOFavorite dncToDAO:dictionary[@"my_favorite"]];
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
@@ -70,7 +77,7 @@
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
     self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
-    
+
     return self.id ? self : nil;
 }
 
