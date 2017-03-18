@@ -10,6 +10,7 @@
 #import <DNCDataObjects/DAOUser.h>
 
 #import "DAOCategory+dncToDAO.h"
+
 #import "DAOFavorite+dncToDAO.h"
 #import "DAOFollow+dncToDAO.h"
 #import "DAOItem+dncToDAO.h"
@@ -46,6 +47,12 @@
     self.descriptionString  = [self idFromString:dictionary[@"description"]];
     self.rating             = [self numberFromString:dictionary[@"rating"]];
 
+    {
+        NSDictionary*   photo   = dictionary[@"photo"];
+        
+        self.defaultPhoto   = [DAOPhoto dncToDAO:photo];
+    }
+    
     NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
     
     self.numCheckins        = [self numberFromString:counts[@"checkins"]];
