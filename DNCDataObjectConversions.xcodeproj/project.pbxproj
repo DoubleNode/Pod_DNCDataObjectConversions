@@ -49,6 +49,7 @@
 		6AD37F871DCE610E00FFF836 /* DAOUser+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F761DCE610E00FFF836 /* DAOUser+dncToDAO.m */; };
 		6AD37F881DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F781DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m */; };
 		6AD37F891DCE610E00FFF836 /* DAOWishlist+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD37F7A1DCE610E00FFF836 /* DAOWishlist+dncToDAO.m */; };
+		6ADEB8771E837B0200FC5FC9 /* DAOConversation+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADEB8761E837B0200FC5FC9 /* DAOConversation+dncToDAO.m */; };
 		AB7F762AE076F2909F1B7ADB /* Pods_DNCDataObjectConversionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792A50E4F2AA39E020F857D3 /* Pods_DNCDataObjectConversionsTests.framework */; };
 		CF1CE84076C745931D809C02 /* Pods_DNCDataObjectConversions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309A2ED88DC2F67437E986B3 /* Pods_DNCDataObjectConversions.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +154,8 @@
 		6AD37F7A1DCE610E00FFF836 /* DAOWishlist+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOWishlist+dncToDAO.m"; path = "Classes/dncToDAO/DAOWishlist+dncToDAO.m"; sourceTree = "<group>"; };
 		6AD37F8A1DCE612100FFF836 /* DNCDataObjectConversions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DNCDataObjectConversions.podspec; sourceTree = "<group>"; };
 		6AD37F8B1DCE612100FFF836 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6ADEB8751E837B0200FC5FC9 /* DAOConversation+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOConversation+dncToDAO.h"; path = "Classes/dncToDAO/DAOConversation+dncToDAO.h"; sourceTree = "<group>"; };
+		6ADEB8761E837B0200FC5FC9 /* DAOConversation+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOConversation+dncToDAO.m"; path = "Classes/dncToDAO/DAOConversation+dncToDAO.m"; sourceTree = "<group>"; };
 		792A50E4F2AA39E020F857D3 /* Pods_DNCDataObjectConversionsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNCDataObjectConversionsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F33DC0939763CD68F241D8 /* Pods-DNCDataObjectConversions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversions/Pods-DNCDataObjectConversions.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,6 +305,8 @@
 				6A81CCB11E2B426300C4613A /* DAOCategory+dncToDAO.m */,
 				6AD37F611DCE610E00FFF836 /* DAOCheckin+dncToDAO.h */,
 				6AD37F621DCE610E00FFF836 /* DAOCheckin+dncToDAO.m */,
+				6ADEB8751E837B0200FC5FC9 /* DAOConversation+dncToDAO.h */,
+				6ADEB8761E837B0200FC5FC9 /* DAOConversation+dncToDAO.m */,
 				6AD37F631DCE610E00FFF836 /* DAOFavorite+dncToDAO.h */,
 				6AD37F641DCE610E00FFF836 /* DAOFavorite+dncToDAO.m */,
 				6A02B4D81E762A7400161A8A /* DAOFlag+dncToDAO.h */,
@@ -587,6 +592,7 @@
 				6AD37F801DCE610E00FFF836 /* DAOItem+dncToDAO.m in Sources */,
 				6AD37F521DCE60FF00FFF836 /* NSMutableDictionary+daoFollowToDNC.m in Sources */,
 				6AD37F831DCE610E00FFF836 /* DAONews+dncToDAO.m in Sources */,
+				6ADEB8771E837B0200FC5FC9 /* DAOConversation+dncToDAO.m in Sources */,
 				6AD37F551DCE60FF00FFF836 /* NSMutableDictionary+daoMessageToDNC.m in Sources */,
 				6AD37F4F1DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.m in Sources */,
 				6AD37F091DCE606900FFF836 /* main.m in Sources */,
