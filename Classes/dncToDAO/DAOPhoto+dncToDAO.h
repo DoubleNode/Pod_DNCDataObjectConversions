@@ -13,4 +13,7 @@
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
 
++ (DAOFavorite*)createFavorite;
++ (DAOUser*)createUser;
+
 @end

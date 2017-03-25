@@ -13,4 +13,10 @@
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
 
++ (DAOCategory*)createCategory;
++ (DAOConversation*)createConversation;
++ (DAOItem*)createItem;
++ (DAOLocation*)createLocation;
++ (DAOUser*)createUser;
+
 @end

@@ -91,7 +91,7 @@
     NSDictionary* photo = item[@"photo"];
     if (photo)
     {
-        if (photo[@"path"] && ![photo[@"path"] isEqual:[NSNull null]])
+        if (photo[@"path"] && ![photo[@"path"] isEqual:NSNull.null])
         {
             DAOPhoto*   daoPhoto   = [DAOPhoto daoToDNC:photo];
             

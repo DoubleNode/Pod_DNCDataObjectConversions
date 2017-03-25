@@ -7,9 +7,10 @@
 //
 
 @import DNCore;
-#import <DNCDataObjects/DAOUser.h>
 
 #import "DAOFlag+dncToDAO.h"
+
+#import "DAOUser+dncToDAO.h"
 
 @implementation DAOFlag (dncToDAO)
 
@@ -18,7 +19,7 @@
     return [DAOFlag.flag dncToDAO:dictionary];
 }
 
-- (DAOUser*)createUser
++ (DAOUser*)createUser
 {
     return DAOUser.user;
 }
@@ -73,10 +74,10 @@
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.class.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.class.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
 
     return self.id ? self : nil;
 }

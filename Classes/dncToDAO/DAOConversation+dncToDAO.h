@@ -13,4 +13,9 @@
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
 
++ (DAOCategory*)createCategory;
++ (DAOItem*)createItem;
++ (DAOLocation*)createLocation;
++ (DAOUser*)createUser;
+
 @end

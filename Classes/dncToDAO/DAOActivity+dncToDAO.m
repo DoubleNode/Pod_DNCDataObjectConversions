@@ -7,7 +7,6 @@
 //
 
 @import DNCore;
-#import <DNCDataObjects/DAOUser.h>
 
 #import "DAOActivity+dncToDAO.h"
 
@@ -19,6 +18,7 @@
 #import "DAOPhoto+dncToDAO.h"
 #import "DAORating+dncToDAO.h"
 #import "DAOReview+dncToDAO.h"
+#import "DAOUser+dncToDAO.h"
 #import "DAOWishlist+dncToDAO.h"
 
 @implementation DAOActivity (dncToDAO)
@@ -28,9 +28,54 @@
     return [DAOActivity.activity dncToDAO:dictionary];
 }
 
-- (DAOUser*)createUser
++ (DAOCheckin*)createCheckin
+{
+    return DAOCheckin.checkin;
+}
+
++ (DAOFavorite*)createFavorite
+{
+    return DAOFavorite.favorite;
+}
+
++ (DAOItem*)createItem
+{
+    return DAOItem.item;
+}
+
++ (DAOLocation*)createLocation
+{
+    return DAOLocation.location;
+}
+
++ (DAONews*)createNews
+{
+    return DAONews.news;
+}
+
++ (DAOPhoto*)createPhoto
+{
+    return DAOPhoto.photo;
+}
+
++ (DAORating*)createRating
+{
+    return DAORating.rating;
+}
+
++ (DAOReview*)createReview
+{
+    return DAOReview.review;
+}
+
++ (DAOUser*)createUser
 {
     return DAOUser.user;
+}
+
++ (DAOWishlist*)createWishlist
+{
+    return DAOWishlist.wishlist;
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
@@ -50,7 +95,7 @@
     
     if ([self.code isEqualToString:kActivityCodeCheckin])
     {
-        DAOCheckin* daoCheckin  = [DAOCheckin dncToDAO:data];
+        DAOCheckin* daoCheckin  = [self.class.createCheckin dncToDAO:data];
         
         self.typeId     = daoCheckin.id;
         self.checkinId  = daoCheckin.id;
@@ -67,7 +112,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeFavorite])
     {
-        DAOFavorite*    daoFavorite = [DAOFavorite dncToDAO:data];
+        DAOFavorite*    daoFavorite = [self.class.createFavorite dncToDAO:data];
         
         self.typeId      = daoFavorite.id;
         self.favoriteId  = daoFavorite.id;
@@ -99,7 +144,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeItemCreated])
     {
-        DAOItem*    daoItem = [DAOItem dncToDAO:data];
+        DAOItem*    daoItem = [self.class.createItem dncToDAO:data];
         
         self.typeId = daoItem.id;
         
@@ -108,7 +153,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeLocationCreated])
     {
-        DAOLocation*    daoLocation = [DAOLocation dncToDAO:data];
+        DAOLocation*    daoLocation = [self.class.createLocation dncToDAO:data];
         
         self.typeId     = daoLocation.id;
         
@@ -117,7 +162,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeNewsCreated])
     {
-        DAONews*    daoNews = [DAONews dncToDAO:data];
+        DAONews*    daoNews = [self.class.createNews dncToDAO:data];
         
         self.typeId     = daoNews.id;
         self.newsId     = daoNews.id;
@@ -125,7 +170,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeNewsUpdated])
     {
-        DAONews*    daoNews = [DAONews dncToDAO:data];
+        DAONews*    daoNews = [self.class.createNews dncToDAO:data];
         
         self.typeId     = daoNews.id;
         self.newsId     = daoNews.id;
@@ -133,7 +178,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodePhoto])
     {
-        DAOPhoto*   daoPhoto    = [DAOPhoto dncToDAO:data];
+        DAOPhoto*   daoPhoto    = [self.class.createPhoto dncToDAO:data];
         
         self.typeId     = daoPhoto.id;
         self.photoId    = daoPhoto.id;
@@ -153,7 +198,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeRating])
     {
-        DAORating*  daoRating   = [DAORating dncToDAO:data];
+        DAORating*  daoRating   = [self.class.createRating dncToDAO:data];
         
         self.typeId     = daoRating.id;
         self.ratingId   = daoRating.id;
@@ -167,7 +212,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeReview])
     {
-        DAOReview*  daoReview   = [DAOReview dncToDAO:data];
+        DAOReview*  daoReview   = [self.class.createReview dncToDAO:data];
         
         self.typeId     = daoReview.id;
         self.reviewId   = daoReview.id;
@@ -184,7 +229,7 @@
     }
     else if ([self.code isEqualToString:kActivityCodeWishlist])
     {
-        DAOWishlist*    daoWishlist = [DAOWishlist dncToDAO:data];
+        DAOWishlist*    daoWishlist = [self.class.createWishlist dncToDAO:data];
         
         self.typeId     = daoWishlist.id;
         self.wishlistId = daoWishlist.id;
@@ -205,14 +250,14 @@
     
     self.numFavorites   = [self numberFromString:counts[@"favorites"]];
     
-    self.myFavorite     = [DAOFavorite dncToDAO:dictionary[@"my_favorite"]];
+    self.myFavorite     = [self.class.createFavorite dncToDAO:dictionary[@"my_favorite"]];
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.class.createUser;    self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.class.createUser;    self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
     
     return self.id ? self : nil;
 }

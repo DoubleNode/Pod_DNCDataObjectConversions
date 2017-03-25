@@ -22,7 +22,22 @@
     return [DAOConversation.conversation dncToDAO:dictionary];
 }
 
-- (DAOUser*)createUser
++ (DAOCategory*)createCategory
+{
+    return DAOCategory.category;
+}
+
++ (DAOItem*)createItem
+{
+    return DAOItem.item;
+}
+
++ (DAOLocation*)createLocation
+{
+    return DAOLocation.location;
+}
+
++ (DAOUser*)createUser
 {
     return DAOUser.user;
 }
@@ -53,7 +68,7 @@
             }
             else
             {
-                daoCategory = [DAOCategory dncToDAO:category];
+                daoCategory = [self.class.createCategory dncToDAO:category];
             }
             
             if (daoCategory)
@@ -80,7 +95,7 @@
             }
             else
             {
-                daoItem = [DAOItem dncToDAO:item];
+                daoItem = [self.class.createItem dncToDAO:item];
             }
             
             if (daoItem)
@@ -107,7 +122,7 @@
             }
             else
             {
-                daoLocation = [DAOLocation dncToDAO:location];
+                daoLocation = [self.class.createLocation dncToDAO:location];
             }
             
             if (daoLocation)
@@ -134,7 +149,7 @@
             }
             else
             {
-                daoUser = [DAOUser dncToDAO:user];
+                daoUser = [self.class.createUser dncToDAO:user];
             }
             
             if (daoUser)
@@ -148,10 +163,10 @@
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.class.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.class.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
 
     return self.id ? self : nil;
 }

@@ -7,7 +7,6 @@
 //
 
 @import DNCore;
-#import <DNCDataObjects/DAOUser.h>
 
 #import "DAOMessage+dncToDAO.h"
 
@@ -24,7 +23,27 @@
     return [DAOMessage.message dncToDAO:dictionary];
 }
 
-- (DAOUser*)createUser
++ (DAOCategory*)createCategory
+{
+    return DAOCategory.category;
+}
+
++ (DAOConversation*)createConversation
+{
+    return DAOConversation.conversation;
+}
+
++ (DAOItem*)createItem
+{
+    return DAOItem.item;
+}
+
++ (DAOLocation*)createLocation
+{
+    return DAOLocation.location;
+}
+
++ (DAOUser*)createUser
 {
     return DAOUser.user;
 }
@@ -38,13 +57,13 @@
     
     DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
-    self.id         = [self idFromString:dictionary[@"id"]];
+    self.id = [self idFromString:dictionary[@"id"]];
 
     NSString*   conversationId  = [self idFromString:dictionary[@"user_id"]];
     
-    self.conversation   = [DAOConversation dncToDAO:@{
-                                                      @"id" : conversationId,
-                                                      }];
+    self.conversation   = [self.class.createConversation dncToDAO:@{
+                                                                    @"id" : conversationId,
+                                                                    }];
 
     self.subject    = [self stringFromString:dictionary[@"subject"]];
     self.message    = [self stringFromString:dictionary[@"message"]];
@@ -55,35 +74,35 @@
     
     if ([fromType isEqualToString:@"category"])
     {
-        self.fromCategory   = [DAOCategory dncToDAO:@{
-                                                      @"id" : fromId,
-                                                      }];
+        self.fromCategory   = [self.class.createCategory dncToDAO:@{
+                                                                    @"id" : fromId,
+                                                                    }];
     }
     else if ([fromType isEqualToString:@"item"])
     {
-        self.fromItem   = [DAOItem dncToDAO:@{
-                                              @"id" : fromId,
-                                              }];
+        self.fromItem   = [self.class.createItem dncToDAO:@{
+                                                            @"id" : fromId,
+                                                            }];
     }
     else if ([fromType isEqualToString:@"location"])
     {
-        self.fromLocation   = [DAOLocation dncToDAO:@{
-                                                      @"id" : fromId,
-                                                      }];
+        self.fromLocation   = [self.class.createLocation dncToDAO:@{
+                                                                    @"id" : fromId,
+                                                                    }];
     }
     else if ([fromType isEqualToString:@"user"])
     {
-        self.fromUser   = [DAOUser dncToDAO:@{
-                                              @"id" : fromId,
-                                              }];
+        self.fromUser   = [self.class.createUser dncToDAO:@{
+                                                            @"id" : fromId,
+                                                            }];
     }
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.class.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.class.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
 
     return self.id ? self : nil;
 }

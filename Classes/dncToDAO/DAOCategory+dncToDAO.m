@@ -7,7 +7,6 @@
 //
 
 @import DNCore;
-#import <DNCDataObjects/DAOUser.h>
 
 #import "DAOCategory+dncToDAO.h"
 
@@ -18,6 +17,7 @@
 #import "DAOPhoto+dncToDAO.h"
 #import "DAORating+dncToDAO.h"
 #import "DAOReview+dncToDAO.h"
+#import "DAOUser+dncToDAO.h"
 #import "DAOWishlist+dncToDAO.h"
 
 @implementation DAOCategory (dncToDAO)
@@ -27,9 +27,49 @@
     return [DAOCategory.category dncToDAO:dictionary];
 }
 
-- (DAOUser*)createUser
++ (DAOFavorite*)createFavorite
+{
+    return DAOFavorite.favorite;
+}
+
++ (DAOFollow*)createFollow
+{
+    return DAOFollow.follow;
+}
+
++ (DAOItem*)createItem
+{
+    return DAOItem.item;
+}
+
++ (DAOLocation*)createLocation
+{
+    return DAOLocation.location;
+}
+
++ (DAOPhoto*)createPhoto
+{
+    return DAOPhoto.photo;
+}
+
++ (DAORating*)createRating
+{
+    return DAORating.rating;
+}
+
++ (DAOReview*)createReview
+{
+    return DAOReview.review;
+}
+
++ (DAOUser*)createUser
 {
     return DAOUser.user;
+}
+
++ (DAOWishlist*)createWishlist
+{
+    return DAOWishlist.wishlist;
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
@@ -47,32 +87,35 @@
     self.descriptionString  = [self idFromString:dictionary[@"description"]];
     self.rating             = [self numberFromString:dictionary[@"rating"]];
 
+    id  photo = dictionary[@"photo"];
+    if (photo && (photo != NSNull.null))
     {
-        NSDictionary*   photo   = dictionary[@"photo"];
+        self.defaultPhoto   = [self.class.createPhoto dncToDAO:photo];
         
-        self.defaultPhoto   = [DAOPhoto dncToDAO:photo];
     }
     
-    NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
+    {
+        NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
+        
+        self.numCheckins        = [self numberFromString:counts[@"checkins"]];
+        self.numFavorites       = [self numberFromString:counts[@"favorites"]];
+        self.numFlags           = [self numberFromString:counts[@"flags"]];
+        self.numFollowers       = [self numberFromString:counts[@"followers"]];
+        self.numItems           = [self numberFromString:counts[@"items"]];
+        self.numRatings         = [self numberFromString:counts[@"ratings"]];
+        self.numReviews         = [self numberFromString:counts[@"reviews"]];
+        self.numTags            = [self numberFromString:counts[@"tags"]];
+        self.numWishlists       = [self numberFromString:counts[@"wishlists"]];
+    }
     
-    self.numCheckins        = [self numberFromString:counts[@"checkins"]];
-    self.numFavorites       = [self numberFromString:counts[@"favorites"]];
-    self.numFlags           = [self numberFromString:counts[@"flags"]];
-    self.numFollowers       = [self numberFromString:counts[@"followers"]];
-    self.numItems           = [self numberFromString:counts[@"items"]];
-    self.numRatings         = [self numberFromString:counts[@"ratings"]];
-    self.numReviews         = [self numberFromString:counts[@"reviews"]];
-    self.numTags            = [self numberFromString:counts[@"tags"]];
-    self.numWishlists       = [self numberFromString:counts[@"wishlists"]];
+    self.myFavorite         = [self.class.createFavorite dncToDAO:dictionary[@"my_favorite"]];
+    self.myFollow           = [self.class.createFollow dncToDAO:dictionary[@"my_follow"]];
+    self.myRating           = [self.class.createRating dncToDAO:dictionary[@"my_rating"]];
+    self.myReview           = [self.class.createReview dncToDAO:dictionary[@"my_review"]];
+    self.myWishlist         = [self.class.createWishlist dncToDAO:dictionary[@"my_wishlist"]];
 
-    self.myFavorite         = [DAOFavorite dncToDAO:dictionary[@"my_favorite"]];
-    self.myFollow           = [DAOFollow dncToDAO:dictionary[@"my_follow"]];
-    self.myRating           = [DAORating dncToDAO:dictionary[@"my_rating"]];
-    self.myReview           = [DAOReview dncToDAO:dictionary[@"my_review"]];
-    self.myWishlist         = [DAOWishlist dncToDAO:dictionary[@"my_wishlist"]];
-
-    NSMutableDictionary*    options     = [@{ } mutableCopy];
-    NSMutableDictionary*    optionIds   = [@{ } mutableCopy];
+    NSMutableDictionary*    options     = NSMutableDictionary.dictionary;
+    NSMutableDictionary*    optionIds   = NSMutableDictionary.dictionary;
     
     NSArray*    optionsArray = dictionary[@"options"];
     if (optionsArray)
@@ -111,7 +154,7 @@
             }
             else
             {
-                daoFavorite = [DAOFavorite dncToDAO:favorite];
+                daoFavorite = [self.class.createFavorite dncToDAO:favorite];
             }
             
             if (daoFavorite)
@@ -138,7 +181,7 @@
             }
             else
             {
-                daoItem = [DAOItem dncToDAO:item];
+                daoItem = [self.class.createItem dncToDAO:item];
             }
             
             if (daoItem)
@@ -165,7 +208,7 @@
             }
             else
             {
-                daoLocation = [DAOLocation dncToDAO:location];
+                daoLocation = [self.class.createLocation dncToDAO:location];
             }
             
             if (daoLocation)
@@ -192,7 +235,7 @@
             {
                 if (photo[@"path"] && ![photo[@"path"] isEqual:NSNull.null])
                 {
-                    DAOPhoto*   daoPhoto   = [DAOPhoto dncToDAO:photo];
+                    DAOPhoto*   daoPhoto   = [self.class.createPhoto dncToDAO:photo];
                     if (daoPhoto)
                     {
                         [daoPhotos addObject:daoPhoto];
@@ -224,7 +267,7 @@
             }
             else
             {
-                daoWishlist = [DAOWishlist dncToDAO:wishlist];
+                daoWishlist = [self.class.createWishlist dncToDAO:wishlist];
             }
             
             if (daoWishlist)
@@ -238,10 +281,10 @@
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.class.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.class.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
 
     return self.id ? self : nil;
 }

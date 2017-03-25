@@ -10,6 +10,9 @@
 
 #import "DAOUser+dncToDAO.h"
 
+#import "DAOContact+dncToDAO.h"
+#import "DAOPhoto+dncToDAO.h"
+
 @implementation DAOUser (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
@@ -17,7 +20,17 @@
     return [DAOUser.user dncToDAO:dictionary];
 }
 
-- (DAOUser*)createUser
++ (DAOContact*)createContact
+{
+    return DAOContact.contact;
+}
+
++ (DAOPhoto*)createPhoto
+{
+    return DAOPhoto.photo;
+}
+
++ (DAOUser*)createUser
 {
     return DAOUser.user;
 }
@@ -41,10 +54,22 @@
     self.email          = [self stringFromString:dictionary[@"email"]];
     self.handle         = [self stringFromString:dictionary[@"handle"]];
     self.phoneNumber    = [self stringFromString:dictionary[@"phone"]];
-    if (dictionary[@"avatar"] && (dictionary[@"avatar"] != [NSNull null]))
+
+    id  avatar = dictionary[@"avatar"];
+    if (avatar && (avatar != NSNull.null))
     {
-        self.avatarId   = [self idFromString:dictionary[@"avatar"][@"id"]];
+        self.avatarId   = [self idFromString:avatar[@"id"]];
+        self.avatar     = [self.class.createPhoto dncToDAO:avatar];
+
     }
+
+    id  contact = dictionary[@"contact"];
+    if (contact && (contact != NSNull.null))
+    {
+        self.contactId  = [self idFromString:contact[@"id"]];
+        self.contact    = [self.class.createContact dncToDAO:contact];
+    }
+
     self.rating         = [self numberFromString:dictionary[@"rating"]];
 
     self.verifyKey      = [self stringFromString:dictionary[@"verify_key"]];
@@ -74,8 +99,8 @@
 
     self.birthday               = [self dateFromString:dictionary[@"birthday"]];
 
-    NSMutableDictionary*    options     = [@{ } mutableCopy];
-    NSMutableDictionary*    optionIds   = [@{ } mutableCopy];
+    NSMutableDictionary*    options     = NSMutableDictionary.dictionary;
+    NSMutableDictionary*    optionIds   = NSMutableDictionary.dictionary;
     
     NSArray*    optionsArray = dictionary[@"options"];
     if (optionsArray)
@@ -102,10 +127,10 @@
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.class.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.class.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
     
     return self.id ? self : nil;
 }

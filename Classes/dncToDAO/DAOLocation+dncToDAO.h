@@ -13,4 +13,12 @@
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
 
++ (DAOCategory*)createCategory;
++ (DAOFavorite*)createFavorite;
++ (DAOItem*)createItem;
++ (DAOPhoto*)createPhoto;
++ (DAOSocialAccount*)createSocialAccount;
++ (DAOUser*)createUser;
++ (DAOWishlist*)createWishlist;
+
 @end

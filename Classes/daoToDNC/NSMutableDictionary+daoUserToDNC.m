@@ -39,7 +39,7 @@
     self.email          = [self stringFromString:item[@"email"]];
     self.handle         = [self stringFromString:item[@"handle"]];
     self.phoneNumber    = [self stringFromString:item[@"phone"]];
-    if (item[@"avatar"] && (item[@"avatar"] != [NSNull null]))
+    if (item[@"avatar"] && (item[@"avatar"] != NSNull.null))
     {
         self.avatarId   = [self idFromString:item[@"avatar"][@"id"]];
     }
@@ -74,8 +74,8 @@
         self.birthday   = [dateFormatter dateFromString:item[@"birthday"]];
     }
     
-    NSMutableDictionary*    options     = [@{ } mutableCopy];
-    NSMutableDictionary*    optionIds   = [@{ } mutableCopy];
+    NSMutableDictionary*    options     = NSMutableDictionary.dictionary;
+    NSMutableDictionary*    optionIds   = NSMutableDictionary.dictionary;
     
     NSArray*    optionsArray = item[@"options"];
     if (optionsArray)

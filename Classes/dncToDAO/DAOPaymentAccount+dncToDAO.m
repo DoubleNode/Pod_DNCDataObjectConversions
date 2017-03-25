@@ -1,5 +1,5 @@
 //
-//  DAOReview+dncToDAO.m
+//  DAOPaymentAccount+dncToDAO.m
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,15 +8,21 @@
 
 @import DNCore;
 
-#import "DAOReview+dncToDAO.h"
+#import "DAOPaymentAccount+dncToDAO.h"
 
+#import "DAOContact+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
-@implementation DAOReview (dncToDAO)
+@implementation DAOPaymentAccount (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-   return [DAOReview.review dncToDAO:dictionary];
+    return [DAOPaymentAccount.paymentAccount dncToDAO:dictionary];
+}
+
++ (DAOContact*)createContact
+{
+    return DAOContact.contact;
 }
 
 + (DAOUser*)createUser
@@ -33,19 +39,23 @@
     
     DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
-    self.id        = [self idFromString:dictionary[@"id"]];
-    self.text      = [self stringFromString:dictionary[@"review"]];
+    self.id = [self idFromString:dictionary[@"id"]];
 
-    self.ratingValue    = [self numberFromString:dictionary[@"rating_value"]];
-    if (self.ratingValue.intValue > 5)
+    self.type           = [self stringFromString:dictionary[@"type"]];
+    self.name           = [self stringFromString:dictionary[@"name"]];
+    self.accountNumber  = [self stringFromString:dictionary[@"account_number"]];
+    self.expirationDate = [self dateFromString:dictionary[@"expiration_date"]];
+    self.ccv            = [self stringFromString:dictionary[@"ccv_number"]];
+
+    id  contact = dictionary[@"contact"];
+    if (contact && (contact != NSNull.null))
     {
-        self.ratingValue    = @5;
+        self.contactId  = [self idFromString:contact[@"id"]];
+        self.contact    = [self.class.createContact dncToDAO:contact];
     }
     
-    self.itemId    = [self idFromString:dictionary[@"type_id"]];
-    self.ratingId  = [self idFromString:dictionary[@"rating_id"]];
-    self.photoId   = [self idFromString:dictionary[@"photo_id"]];
-    self.userId    = [self idFromString:dictionary[@"user_id"]];
+    self.userId = [self idFromString:dictionary[@"user_id"]];
+    self.user   = self.class.createUser;    self.user.id    = self.userId;
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];

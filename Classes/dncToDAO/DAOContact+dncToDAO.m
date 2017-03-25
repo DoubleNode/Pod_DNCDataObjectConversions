@@ -1,5 +1,5 @@
 //
-//  DAOCheckin+dncToDAO.m
+//  DAOContact+dncToDAO.m
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,28 +8,15 @@
 
 @import DNCore;
 
-#import "DAOCheckin+dncToDAO.h"
+#import "DAOContact+dncToDAO.h"
 
-#import "DAOItem+dncToDAO.h"
-#import "DAOLocation+dncToDAO.h"
-#import "DAOReview+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
-@implementation DAOCheckin (dncToDAO)
+@implementation DAOContact (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [DAOCheckin.checkin dncToDAO:dictionary];
-}
-
-+ (DAOItem*)createItem
-{
-    return DAOItem.item;
-}
-
-+ (DAOLocation*)createLocation
-{
-    return DAOLocation.location;
+    return [DAOContact.contact dncToDAO:dictionary];
 }
 
 + (DAOUser*)createUser
@@ -46,35 +33,26 @@
     
     DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
-    self.id     = [self idFromString:dictionary[@"id"]];
+    self.id = [self idFromString:dictionary[@"id"]];
 
-    NSString*   type    = [self stringFromString:dictionary[@"type"]];
+    self.type       = [self stringFromString:dictionary[@"type"]];
+    self.name       = [self stringFromString:dictionary[@"name"]];
+    self.email      = [self stringFromString:dictionary[@"email"]];
+    self.phone      = [self stringFromString:dictionary[@"phone"]];
+    self.address    = [self stringFromString:dictionary[@"address"]];
+    self.address2   = [self stringFromString:dictionary[@"address2"]];
+    self.city       = [self stringFromString:dictionary[@"city"]];
+    self.state      = [self stringFromString:dictionary[@"state"]];
+    self.postalCode = [self stringFromString:dictionary[@"postalcode"]];
+    self.country    = [self stringFromString:dictionary[@"country"]];
     
-    if ([type isEqualToString:@"item"])
-    {
-        id  item = dictionary[@"item"];
-        if (item && (item != NSNull.null))
-        {
-            self.itemId  = [self idFromString:item[@"id"]];
-            self.item    = [self.class.createItem dncToDAO:item];
-        }
-    }
-    else if ([type isEqualToString:@"location"])
-    {
-        id  location = dictionary[@"location"];
-        if (location && (location != NSNull.null))
-        {
-            self.locationId = [self idFromString:location[@"id"]];
-            self.location   = [self.class.createLocation dncToDAO:location];
-        }
-    }
-    else if ([type isEqualToString:@"review"])
-    {
-    }
+    self.geohash    = [self stringFromString:dictionary[@"geohash"]];
+    self.latitude   = [self numberFromString:dictionary[@"latitude"]];
+    self.longitude  = [self numberFromString:dictionary[@"longitude"]];
 
     self.userId = [self idFromString:dictionary[@"user_id"]];
     self.user   = self.class.createUser;    self.user.id    = self.userId;
-    
+
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
     self._createdBy = self.class.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];

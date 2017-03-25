@@ -7,7 +7,6 @@
 //
 
 @import DNCore;
-#import <DNCDataObjects/DAOUser.h>
 
 #import "DAOLocation+dncToDAO.h"
 
@@ -16,6 +15,7 @@
 #import "DAOItem+dncToDAO.h"
 #import "DAOPhoto+dncToDAO.h"
 #import "DAOSocialAccount+dncToDAO.h"
+#import "DAOUser+dncToDAO.h"
 #import "DAOWishlist+dncToDAO.h"
 
 @implementation DAOLocation (dncToDAO)
@@ -25,9 +25,39 @@
     return [DAOLocation.location dncToDAO:dictionary];
 }
 
-- (DAOUser*)createUser
++ (DAOCategory*)createCategory
+{
+    return DAOCategory.category;
+}
+
++ (DAOFavorite*)createFavorite
+{
+    return DAOFavorite.favorite;
+}
+
++ (DAOItem*)createItem
+{
+    return DAOItem.item;
+}
+
++ (DAOPhoto*)createPhoto
+{
+    return DAOPhoto.photo;
+}
+
++ (DAOSocialAccount*)createSocialAccount
+{
+    return DAOSocialAccount.socialAccount;
+}
+
++ (DAOUser*)createUser
 {
     return DAOUser.user;
+}
+
++ (DAOWishlist*)createWishlist
+{
+    return DAOWishlist.wishlist;
 }
 
 - (instancetype)dncToDAO:(NSDictionary*)dictionary
@@ -56,12 +86,12 @@
     }
     self.rating     = [self numberFromString:dictionary[@"rating"]];
     
+    id  photo = dictionary[@"photo"];
+    if (photo && (photo != NSNull.null))
     {
-        NSDictionary*   photo   = dictionary[@"photo"];
+        self.defaultPhoto   = [self.class.createPhoto dncToDAO:photo];
         
-        self.defaultPhoto   = [DAOPhoto dncToDAO:photo];
     }
-    
     self.phone              = [self stringFromString:dictionary[@"phone"]];
     self.address            = [self stringFromString:dictionary[@"address"]];
     self.address2           = [self stringFromString:dictionary[@"address2"]];
@@ -75,19 +105,21 @@
 
     self.followingFlag        = ([dictionary[@"my_follow"] isKindOfClass:NSDictionary.class] ? YES : NO);
     
-    NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
-    if (counts)
     {
-        self.numFollowers     = [self numberFromString:counts[@"followers"]];
-        self.numRatings       = [self numberFromString:counts[@"ratings"]];
-        self.numReviews       = [self numberFromString:counts[@"reviews"]];
-        self.numFavorites     = [self numberFromString:counts[@"favorites"]];
-        self.numWishlists     = [self numberFromString:counts[@"wishlists"]];
-        self.numCheckins      = [self numberFromString:counts[@"checkins"]];
+        NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
+        if (counts)
+        {
+            self.numFollowers     = [self numberFromString:counts[@"followers"]];
+            self.numRatings       = [self numberFromString:counts[@"ratings"]];
+            self.numReviews       = [self numberFromString:counts[@"reviews"]];
+            self.numFavorites     = [self numberFromString:counts[@"favorites"]];
+            self.numWishlists     = [self numberFromString:counts[@"wishlists"]];
+            self.numCheckins      = [self numberFromString:counts[@"checkins"]];
+        }
     }
     
-    NSMutableDictionary*    options     = [@{ } mutableCopy];
-    NSMutableDictionary*    optionIds   = [@{ } mutableCopy];
+    NSMutableDictionary*    options     = NSMutableDictionary.dictionary;
+    NSMutableDictionary*    optionIds   = NSMutableDictionary.dictionary;
     
     NSArray*    optionsArray = dictionary[@"options"];
     if (optionsArray)
@@ -127,7 +159,7 @@
             }
             else
             {
-                daoCategory = [DAOCategory dncToDAO:category];
+                daoCategory = [self.class.createCategory dncToDAO:category];
             }
             
             if (daoCategories)
@@ -154,7 +186,7 @@
             }
             else
             {
-                daoFavorite = [DAOFavorite dncToDAO:favorite];
+                daoFavorite = [self.class.createFavorite dncToDAO:favorite];
             }
             
             if (daoFavorite)
@@ -181,7 +213,7 @@
             }
             else
             {
-                daoItem = [DAOItem dncToDAO:item];
+                daoItem = [self.class.createItem dncToDAO:item];
             }
             
             if (daoItem)
@@ -209,7 +241,7 @@
             {
                 if (photo[@"path"] && ![photo[@"path"] isEqual:NSNull.null])
                 {
-                    DAOPhoto*   daoPhoto   = [DAOPhoto dncToDAO:photo];
+                    DAOPhoto*   daoPhoto   = [self.class.createPhoto dncToDAO:photo];
                     if (daoPhoto)
                     {
                         [daoPhotos addObject:daoPhoto];
@@ -227,6 +259,33 @@
     }
     
     {
+        NSArray<NSDictionary* >* socialAccounts = dictionary[@"socialAccounts"];
+        
+        NSMutableArray<DAOSocialAccount* >* daoSocialAccounts = [NSMutableArray arrayWithCapacity:socialAccounts.count];
+        
+        for (NSDictionary* socialAccount in socialAccounts)
+        {
+            DAOSocialAccount*   daoSocialAccount;
+            
+            if ([socialAccount isKindOfClass:DAOSocialAccount.class])
+            {
+                daoSocialAccount = (DAOSocialAccount*)socialAccount;
+            }
+            else
+            {
+                daoSocialAccount = [self.class.createSocialAccount dncToDAO:socialAccount];
+            }
+            
+            if (daoSocialAccount)
+            {
+                [daoSocialAccounts addObject:daoSocialAccount];
+            }
+        }
+        
+        self.socialAccounts  = daoSocialAccounts;
+    }
+    
+    {
         NSArray<NSDictionary* >* wishlists  = dictionary[@"wishlists"];
         
         NSMutableArray<DAOWishlist* >*  daoWishlists = [NSMutableArray arrayWithCapacity:wishlists.count];
@@ -241,7 +300,7 @@
             }
             else
             {
-                daoWishlist = [DAOWishlist dncToDAO:wishlist];
+                daoWishlist = [self.class.createWishlist dncToDAO:wishlist];
             }
             
             if (daoWishlist)
@@ -253,37 +312,12 @@
         self.wishlists  = daoWishlists;
     }
     
-    NSArray<NSDictionary* >* socialAccounts = dictionary[@"socialAccounts"];
-    
-    NSMutableArray<DAOSocialAccount* >* daoSocialAccounts = [NSMutableArray arrayWithCapacity:socialAccounts.count];
-    
-    for (NSDictionary* socialAccount in socialAccounts)
-    {
-        DAOSocialAccount*   daoSocialAccount;
-        
-        if ([socialAccount isKindOfClass:DAOSocialAccount.class])
-        {
-            daoSocialAccount = (DAOSocialAccount*)socialAccount;
-        }
-        else
-        {
-            daoSocialAccount = [DAOSocialAccount dncToDAO:socialAccount];
-        }
-        
-        if (daoSocialAccount)
-        {
-            [daoSocialAccounts addObject:daoSocialAccount];
-        }
-    }
-    
-    self.socialAccounts  = daoSocialAccounts;
-    
     self._status    = [self stringFromString:dictionary[@"status"]];
     self._created   = [self timeFromString:dictionary[@"added"]];
-    self._createdBy = self.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
+    self._createdBy = self.class.createUser;  self._createdBy.id  = [self stringFromString:dictionary[@"added_by"]];
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
-    self._updatedBy = self.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
+    self._updatedBy = self.class.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
     
     return self.id ? self : nil;
 }

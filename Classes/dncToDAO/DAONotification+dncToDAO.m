@@ -1,5 +1,5 @@
 //
-//  DAONews+dncToDAO.m
+//  DAONotification+dncToDAO.m
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,21 +8,15 @@
 
 @import DNCore;
 
-#import "DAONews+dncToDAO.h"
+#import "DAONotification+dncToDAO.h"
 
-#import "DAOFavorite+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
-@implementation DAONews (dncToDAO)
+@implementation DAONotification (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [DAONews.news dncToDAO:dictionary];
-}
-
-+ (DAOFavorite*)createFavorite
-{
-    return DAOFavorite.favorite;
+    return [DAONotification.notification dncToDAO:dictionary];
 }
 
 + (DAOUser*)createUser
@@ -39,21 +33,13 @@
     
     DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
-    self.id         = [self idFromString:dictionary[@"id"]];
+    self.id = [self idFromString:dictionary[@"id"]];
 
-    self.title      = [self stringFromString:dictionary[@"title"]];
-    self.body       = [self stringFromString:dictionary[@"body"]];
-    self.bodyShort  = [self stringFromString:dictionary[@"body_short"]];
+    self.type   = [self stringFromString:dictionary[@"type"]];
+    self.data   = dictionary[@"data"];
 
-    self.imageUrl   = [self urlFromString:dictionary[@"image"]];
-
-    self.expiration = [self timeFromString:dictionary[@"expiration"]];
-
-    NSMutableDictionary*    counts  = [dictionary[@"counts"] mutableCopy];
-    
-    self.numFavorites   = [self numberFromString:counts[@"favorites"]];
-    
-    self.myFavorite     = [self.class.createFavorite dncToDAO:dictionary[@"my_favorite"]];
+    self.userId = [self idFromString:dictionary[@"user_id"]];
+    self.user   = self.class.createUser;    self.user.id    = self.userId;
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
@@ -61,7 +47,7 @@
     self._synced    = NSDate.date;
     self._updated   = [self timeFromString:dictionary[@"modified"]];
     self._updatedBy = self.class.createUser;  self._updatedBy.id  = [self stringFromString:dictionary[@"modified_by"]];
-    
+
     return self.id ? self : nil;
 }
 
