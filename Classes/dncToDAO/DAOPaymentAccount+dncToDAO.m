@@ -45,7 +45,7 @@
     self.name           = [self stringFromString:dictionary[@"name"]];
     self.accountNumber  = [self stringFromString:dictionary[@"account_number"]];
     self.expirationDate = [self dateFromString:dictionary[@"expiration_date"]];
-    self.ccv            = [self stringFromString:dictionary[@"ccv_number"]];
+    self.cvv            = [self stringFromString:dictionary[@"cvv_number"]];
 
     id  contact = dictionary[@"contact"];
     if (contact && (contact != NSNull.null))
