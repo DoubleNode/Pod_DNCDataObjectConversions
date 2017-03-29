@@ -43,6 +43,7 @@
 
     self.type           = [self stringFromString:dictionary[@"type"]];
     self.name           = [self stringFromString:dictionary[@"name"]];
+    self.accountToken   = [self stringFromString:dictionary[@"token"]];
     self.accountNumber  = [self stringFromString:dictionary[@"account_number"]];
     self.expirationDate = [self dateFromString:dictionary[@"expiration_date"]];
     self.cvv            = [self stringFromString:dictionary[@"cvv_number"]];
