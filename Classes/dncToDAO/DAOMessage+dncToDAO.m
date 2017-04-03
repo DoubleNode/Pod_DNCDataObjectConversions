@@ -59,7 +59,7 @@
     
     self.id = [self idFromString:dictionary[@"id"]];
 
-    NSString*   conversationId  = [self idFromString:dictionary[@"user_id"]];
+    NSString*   conversationId  = [self idFromString:dictionary[@"conversation_id"]];
     
     self.conversation   = [self.class.createConversation dncToDAO:@{
                                                                     @"id" : conversationId,
