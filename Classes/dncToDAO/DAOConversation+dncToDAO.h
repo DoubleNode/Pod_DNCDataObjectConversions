@@ -16,6 +16,7 @@
 + (DAOCategory*)createCategory;
 + (DAOItem*)createItem;
 + (DAOLocation*)createLocation;
++ (DAOMessage*)createMessage;
 + (DAOUser*)createUser;
 
 @end

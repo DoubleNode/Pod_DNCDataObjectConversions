@@ -13,6 +13,7 @@
 #import "DAOCategory+dncToDAO.h"
 #import "DAOItem+dncToDAO.h"
 #import "DAOLocation+dncToDAO.h"
+#import "DAOMessage+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
 @implementation DAOConversation (dncToDAO)
@@ -37,6 +38,11 @@
     return DAOLocation.location;
 }
 
++ (DAOMessage*)createMessage
+{
+    return DAOMessage.message;
+}
+
 + (DAOUser*)createUser
 {
     return DAOUser.user;
@@ -53,6 +59,40 @@
     
     self.id = [self idFromString:dictionary[@"id"]];
 
+    NSDictionary*   counts          = dictionary[@"counts"];
+    NSDictionary*   messageCounts   = counts[@"messages"];
+
+    self.numMessages        = messageCounts[@"total"];
+    self.numUnreadMessages  = messageCounts[@"unread"];
+    self.lastRead           = [self timeFromString:messageCounts[@"last_read"]];
+    
+    {
+        NSArray<NSDictionary* >* messages  = dictionary[@"messages"];
+        
+        NSMutableArray<DAOMessage* >*  daoMessages = [NSMutableArray arrayWithCapacity:messages.count];
+        
+        for (NSDictionary* message in messages)
+        {
+            DAOMessage*    daoMessage;
+            
+            if ([message isKindOfClass:DAOMessage.class])
+            {
+                daoMessage = (DAOMessage*)message;
+            }
+            else
+            {
+                daoMessage = [self.class.createMessage dncToDAO:message];
+            }
+            
+            if (daoMessage)
+            {
+                [daoMessages addObject:daoMessage];
+            }
+        }
+        
+        self.messages  = daoMessages;
+    }
+    
     NSDictionary*   members = dictionary[@"members"];
     
     {
