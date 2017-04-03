@@ -53,8 +53,10 @@
     
     self.id = [self idFromString:dictionary[@"id"]];
 
+    NSDictionary*   members = dictionary[@"members"];
+    
     {
-        NSArray<NSDictionary* >* categories  = dictionary[@"categories"];
+        NSArray<NSDictionary* >* categories  = members[@"categories"];
         
         NSMutableArray<DAOCategory* >*  daoCategories = [NSMutableArray arrayWithCapacity:categories.count];
         
@@ -81,7 +83,7 @@
     }
     
     {
-        NSArray<NSDictionary* >* items  = dictionary[@"items"];
+        NSArray<NSDictionary* >* items  = members[@"items"];
         
         NSMutableArray<DAOItem* >*  daoItems = [NSMutableArray arrayWithCapacity:items.count];
         
@@ -108,7 +110,7 @@
     }
     
     {
-        NSArray<NSDictionary* >* locations  = dictionary[@"locations"];
+        NSArray<NSDictionary* >* locations  = members[@"locations"];
         
         NSMutableArray<DAOLocation* >*  daoLocations = [NSMutableArray arrayWithCapacity:locations.count];
         
@@ -135,7 +137,7 @@
     }
     
     {
-        NSArray<NSDictionary* >* users  = dictionary[@"users"];
+        NSArray<NSDictionary* >* users  = members[@"users"];
         
         NSMutableArray<DAOUser* >*  daoUsers = [NSMutableArray arrayWithCapacity:users.count];
         
