@@ -77,24 +77,28 @@
         self.fromCategory   = [self.class.createCategory dncToDAO:@{
                                                                     @"id" : fromId,
                                                                     }];
+        self.fromCategory._created  = nil;
     }
     else if ([fromType isEqualToString:@"item"])
     {
         self.fromItem   = [self.class.createItem dncToDAO:@{
                                                             @"id" : fromId,
                                                             }];
+        self.fromItem._created  = nil;
     }
     else if ([fromType isEqualToString:@"location"])
     {
         self.fromLocation   = [self.class.createLocation dncToDAO:@{
                                                                     @"id" : fromId,
                                                                     }];
+        self.fromLocation._created  = nil;
     }
     else if ([fromType isEqualToString:@"user"])
     {
         self.fromUser   = [self.class.createUser dncToDAO:@{
                                                             @"id" : fromId,
                                                             }];
+        self.fromUser._created  = nil;
     }
     
     self._status    = @"success";
