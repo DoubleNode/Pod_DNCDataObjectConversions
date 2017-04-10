@@ -37,7 +37,7 @@
 
     self.type           = [self stringFromString:dictionary[@"type"]];
     self.data           = dictionary[@"data"];
-    self.disposition    = [self stringFromString:dictionary[@"type"]];
+    self.disposition    = [self stringFromString:dictionary[@"disposition"]];
 
     self.userId = [self idFromString:dictionary[@"user_id"]];
     self.user   = self.class.createUser;    self.user.id    = self.userId;
