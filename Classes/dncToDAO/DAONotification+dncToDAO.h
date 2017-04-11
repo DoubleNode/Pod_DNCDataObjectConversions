@@ -8,11 +8,18 @@
 
 #import <DNCDataObjects/DAONotification.h>
 
+@class DAOCategory;
+@class DAOItem;
+@class DAOLocation;
+
 @interface DAONotification (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
 
++ (DAOCategory*)createCategory;
++ (DAOItem*)createItem;
++ (DAOLocation*)createLocation;
 + (DAOUser*)createUser;
 
 @end
