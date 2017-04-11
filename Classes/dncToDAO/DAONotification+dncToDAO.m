@@ -53,7 +53,7 @@
     
     self.id = [self idFromString:dictionary[@"id"]];
 
-    self.key            = [self stringFromString:dictionary[@"key"]];
+    self.keycode        = [self stringFromString:dictionary[@"keycode"]];
     self.data           = dictionary[@"data"];
     self.disposition    = [self stringFromString:dictionary[@"disposition"]];
 
