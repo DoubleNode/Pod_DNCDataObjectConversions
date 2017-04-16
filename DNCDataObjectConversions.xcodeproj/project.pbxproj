@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A02B4DA1E762A7400161A8A /* DAOFlag+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02B4D91E762A7400161A8A /* DAOFlag+dncToDAO.m */; };
+		6A02DF321EA3F79600705754 /* DAOLineitem+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02DF311EA3F79600705754 /* DAOLineitem+dncToDAO.m */; };
+		6A02DF351EA3F79C00705754 /* DAOOrder+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02DF341EA3F79C00705754 /* DAOOrder+dncToDAO.m */; };
+		6A02DF381EA3F7A500705754 /* DAOTransaction+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02DF371EA3F7A500705754 /* DAOTransaction+dncToDAO.m */; };
 		6A81CC9D1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CC9C1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m */; };
 		6A81CCA01E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CC9F1E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.m */; };
 		6A81CCAF1E2B413400C4613A /* NSMutableDictionary+daoCategoryToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CCAE1E2B413400C4613A /* NSMutableDictionary+daoCategoryToDNC.m */; };
@@ -75,6 +78,12 @@
 		598C4F53905420020C65F4A2 /* Pods-DNCDataObjectConversionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCDataObjectConversionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCDataObjectConversionsTests/Pods-DNCDataObjectConversionsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A02B4D81E762A7400161A8A /* DAOFlag+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOFlag+dncToDAO.h"; path = "Classes/dncToDAO/DAOFlag+dncToDAO.h"; sourceTree = "<group>"; };
 		6A02B4D91E762A7400161A8A /* DAOFlag+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOFlag+dncToDAO.m"; path = "Classes/dncToDAO/DAOFlag+dncToDAO.m"; sourceTree = "<group>"; };
+		6A02DF301EA3F79600705754 /* DAOLineitem+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOLineitem+dncToDAO.h"; path = "Classes/dncToDAO/DAOLineitem+dncToDAO.h"; sourceTree = "<group>"; };
+		6A02DF311EA3F79600705754 /* DAOLineitem+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOLineitem+dncToDAO.m"; path = "Classes/dncToDAO/DAOLineitem+dncToDAO.m"; sourceTree = "<group>"; };
+		6A02DF331EA3F79C00705754 /* DAOOrder+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOOrder+dncToDAO.h"; path = "Classes/dncToDAO/DAOOrder+dncToDAO.h"; sourceTree = "<group>"; };
+		6A02DF341EA3F79C00705754 /* DAOOrder+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOOrder+dncToDAO.m"; path = "Classes/dncToDAO/DAOOrder+dncToDAO.m"; sourceTree = "<group>"; };
+		6A02DF361EA3F7A500705754 /* DAOTransaction+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOTransaction+dncToDAO.h"; path = "Classes/dncToDAO/DAOTransaction+dncToDAO.h"; sourceTree = "<group>"; };
+		6A02DF371EA3F7A500705754 /* DAOTransaction+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOTransaction+dncToDAO.m"; path = "Classes/dncToDAO/DAOTransaction+dncToDAO.m"; sourceTree = "<group>"; };
 		6A81CC9B1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOSocialAccount+dncToDAO.h"; path = "Classes/dncToDAO/DAOSocialAccount+dncToDAO.h"; sourceTree = "<group>"; };
 		6A81CC9C1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOSocialAccount+dncToDAO.m"; path = "Classes/dncToDAO/DAOSocialAccount+dncToDAO.m"; sourceTree = "<group>"; };
 		6A81CC9E1E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoSocialAccountToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoSocialAccountToDNC.h"; sourceTree = "<group>"; };
@@ -329,6 +338,8 @@
 				6AD37F661DCE610E00FFF836 /* DAOFollow+dncToDAO.m */,
 				6AD37F671DCE610E00FFF836 /* DAOItem+dncToDAO.h */,
 				6AD37F681DCE610E00FFF836 /* DAOItem+dncToDAO.m */,
+				6A02DF301EA3F79600705754 /* DAOLineitem+dncToDAO.h */,
+				6A02DF311EA3F79600705754 /* DAOLineitem+dncToDAO.m */,
 				6AD37F691DCE610E00FFF836 /* DAOLocation+dncToDAO.h */,
 				6AD37F6A1DCE610E00FFF836 /* DAOLocation+dncToDAO.m */,
 				6AD37F6B1DCE610E00FFF836 /* DAOMessage+dncToDAO.h */,
@@ -337,6 +348,8 @@
 				6AD37F6E1DCE610E00FFF836 /* DAONews+dncToDAO.m */,
 				6AE4B0621E862A830051EF08 /* DAONotification+dncToDAO.h */,
 				6AE4B0631E862A830051EF08 /* DAONotification+dncToDAO.m */,
+				6A02DF331EA3F79C00705754 /* DAOOrder+dncToDAO.h */,
+				6A02DF341EA3F79C00705754 /* DAOOrder+dncToDAO.m */,
 				6AE4B0651E862A9C0051EF08 /* DAOPaymentAccount+dncToDAO.h */,
 				6AE4B0661E862A9C0051EF08 /* DAOPaymentAccount+dncToDAO.m */,
 				6AD37F6F1DCE610E00FFF836 /* DAOPhoto+dncToDAO.h */,
@@ -347,6 +360,8 @@
 				6AD37F741DCE610E00FFF836 /* DAOReview+dncToDAO.m */,
 				6A81CC9B1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.h */,
 				6A81CC9C1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m */,
+				6A02DF361EA3F7A500705754 /* DAOTransaction+dncToDAO.h */,
+				6A02DF371EA3F7A500705754 /* DAOTransaction+dncToDAO.m */,
 				6AE4B0681E862AA40051EF08 /* DAOTransmission+dncToDAO.h */,
 				6AE4B0691E862AA40051EF08 /* DAOTransmission+dncToDAO.m */,
 				6AD37F751DCE610E00FFF836 /* DAOUser+dncToDAO.h */,
@@ -600,12 +615,14 @@
 				6AD37F851DCE610E00FFF836 /* DAORating+dncToDAO.m in Sources */,
 				6AD37F5A1DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.m in Sources */,
 				6AD37F0C1DCE606900FFF836 /* AppDelegate.m in Sources */,
+				6A02DF381EA3F7A500705754 /* DAOTransaction+dncToDAO.m in Sources */,
 				6AD37F821DCE610E00FFF836 /* DAOMessage+dncToDAO.m in Sources */,
 				6AE4B0641E862A830051EF08 /* DAONotification+dncToDAO.m in Sources */,
 				6AD37F531DCE60FF00FFF836 /* NSMutableDictionary+daoItemToDNC.m in Sources */,
 				6AD37F881DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m in Sources */,
 				6AD37F7C1DCE610E00FFF836 /* DAOAuth+dncToDAO.m in Sources */,
 				6A81CCB21E2B426300C4613A /* DAOCategory+dncToDAO.m in Sources */,
+				6A02DF321EA3F79600705754 /* DAOLineitem+dncToDAO.m in Sources */,
 				6AD37F7E1DCE610E00FFF836 /* DAOFavorite+dncToDAO.m in Sources */,
 				6AD37F7B1DCE610E00FFF836 /* DAOActivity+dncToDAO.m in Sources */,
 				6AD37F861DCE610E00FFF836 /* DAOReview+dncToDAO.m in Sources */,
@@ -621,6 +638,7 @@
 				6AD37F4F1DCE60FF00FFF836 /* NSMutableDictionary+daoAuthToDNC.m in Sources */,
 				6AD37F091DCE606900FFF836 /* main.m in Sources */,
 				6AD37F5C1DCE60FF00FFF836 /* NSMutableDictionary+daoWishlistToDNC.m in Sources */,
+				6A02DF351EA3F79C00705754 /* DAOOrder+dncToDAO.m in Sources */,
 				6AD37F811DCE610E00FFF836 /* DAOLocation+dncToDAO.m in Sources */,
 				6AD37F871DCE610E00FFF836 /* DAOUser+dncToDAO.m in Sources */,
 				6AD37F591DCE60FF00FFF836 /* NSMutableDictionary+daoReviewToDNC.m in Sources */,
@@ -763,7 +781,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 86F33DC0939763CD68F241D8 /* Pods-DNCDataObjectConversions.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T864D3RXRZ;
 				INFOPLIST_FILE = DNCDataObjectConversions/Info.plist;
@@ -778,7 +796,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D49C282B2EA227D2686F95B /* Pods-DNCDataObjectConversions.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T864D3RXRZ;
 				INFOPLIST_FILE = DNCDataObjectConversions/Info.plist;
