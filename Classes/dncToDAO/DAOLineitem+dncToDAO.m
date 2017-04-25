@@ -67,6 +67,7 @@
     self.quantity   = [self numberFromString:dictionary[@"quantity"]];
     self.price      = [self numberFromString:dictionary[@"price"]];
     self.total      = [self numberFromString:dictionary[@"total"]];
+    self.data       = [self dictionaryFromJsonString:dictionary[@"data"]];
 
     NSString*   type    = [self stringFromString:dictionary[@"type"]];
     if ([type isEqualToString:@"category"])

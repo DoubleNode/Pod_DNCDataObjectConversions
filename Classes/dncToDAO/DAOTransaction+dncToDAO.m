@@ -97,7 +97,8 @@
     self.discount   = [self numberFromString:dictionary[@"discount"]];
     self.tax        = [self numberFromString:dictionary[@"tax"]];
     self.total      = [self numberFromString:dictionary[@"total"]];
-    
+    self.data       = [self dictionaryFromJsonString:dictionary[@"data"]];
+
     self.paymentType    = [self stringFromString:dictionary[@"payment_type"]];
     self.paymentData    = dictionary[@"payment_type"];
 

@@ -68,6 +68,7 @@
     self.status = [self stringFromString:dictionary[@"status"]];
     self.state  = [self stringFromString:dictionary[@"state"]];
     self.total  = [self numberFromString:dictionary[@"total"]];
+    self.data   = [self dictionaryFromJsonString:dictionary[@"data"]];
 
     NSString*   type    = [self stringFromString:dictionary[@"type"]];
     if ([type isEqualToString:@"category"])
