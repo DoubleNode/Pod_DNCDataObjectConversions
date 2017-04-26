@@ -62,7 +62,7 @@
     self.orderId    = [self idFromString:dictionary[@"order_id"]];
     self.order      = self.class.createOrder;   self.order.id = self.orderId;
 
-    self.name       = [self stringFromString:dictionary[@"name"]];
+    self.name       = [self stringFromString:dictionary[@"type_name"]];
 
     self.quantity   = [self numberFromString:dictionary[@"quantity"]];
     self.price      = [self numberFromString:dictionary[@"price"]];
