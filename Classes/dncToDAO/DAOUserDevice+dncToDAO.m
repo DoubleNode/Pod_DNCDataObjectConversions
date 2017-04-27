@@ -37,6 +37,7 @@
     
     self.deviceId   = [self stringFromString:dictionary[@"device_id"]];
     self.deviceType = [self stringFromString:dictionary[@"device_type"]];
+    self.serviceId  = [self stringFromString:dictionary[@"service_id"]];
 
     self.userId     = [self idFromString:dictionary[@"user_id"]];
     
