@@ -11,6 +11,7 @@
 		6A02DF321EA3F79600705754 /* DAOLineitem+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02DF311EA3F79600705754 /* DAOLineitem+dncToDAO.m */; };
 		6A02DF351EA3F79C00705754 /* DAOOrder+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02DF341EA3F79C00705754 /* DAOOrder+dncToDAO.m */; };
 		6A02DF381EA3F7A500705754 /* DAOTransaction+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02DF371EA3F7A500705754 /* DAOTransaction+dncToDAO.m */; };
+		6A6549431EB2EB3E002EBBCC /* DAOUserNotificationSetting+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6549421EB2EB3E002EBBCC /* DAOUserNotificationSetting+dncToDAO.m */; };
 		6A81CC9D1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CC9C1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m */; };
 		6A81CCA01E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CC9F1E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.m */; };
 		6A81CCAF1E2B413400C4613A /* NSMutableDictionary+daoCategoryToDNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CCAE1E2B413400C4613A /* NSMutableDictionary+daoCategoryToDNC.m */; };
@@ -84,6 +85,8 @@
 		6A02DF341EA3F79C00705754 /* DAOOrder+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOOrder+dncToDAO.m"; path = "Classes/dncToDAO/DAOOrder+dncToDAO.m"; sourceTree = "<group>"; };
 		6A02DF361EA3F7A500705754 /* DAOTransaction+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOTransaction+dncToDAO.h"; path = "Classes/dncToDAO/DAOTransaction+dncToDAO.h"; sourceTree = "<group>"; };
 		6A02DF371EA3F7A500705754 /* DAOTransaction+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOTransaction+dncToDAO.m"; path = "Classes/dncToDAO/DAOTransaction+dncToDAO.m"; sourceTree = "<group>"; };
+		6A6549411EB2EB3E002EBBCC /* DAOUserNotificationSetting+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOUserNotificationSetting+dncToDAO.h"; path = "Classes/dncToDAO/DAOUserNotificationSetting+dncToDAO.h"; sourceTree = "<group>"; };
+		6A6549421EB2EB3E002EBBCC /* DAOUserNotificationSetting+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOUserNotificationSetting+dncToDAO.m"; path = "Classes/dncToDAO/DAOUserNotificationSetting+dncToDAO.m"; sourceTree = "<group>"; };
 		6A81CC9B1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOSocialAccount+dncToDAO.h"; path = "Classes/dncToDAO/DAOSocialAccount+dncToDAO.h"; sourceTree = "<group>"; };
 		6A81CC9C1E2AD87A00C4613A /* DAOSocialAccount+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOSocialAccount+dncToDAO.m"; path = "Classes/dncToDAO/DAOSocialAccount+dncToDAO.m"; sourceTree = "<group>"; };
 		6A81CC9E1E2AD89700C4613A /* NSMutableDictionary+daoSocialAccountToDNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+daoSocialAccountToDNC.h"; path = "Classes/daoToDNC/NSMutableDictionary+daoSocialAccountToDNC.h"; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				6AD37F761DCE610E00FFF836 /* DAOUser+dncToDAO.m */,
 				6AD37F771DCE610E00FFF836 /* DAOUserDevice+dncToDAO.h */,
 				6AD37F781DCE610E00FFF836 /* DAOUserDevice+dncToDAO.m */,
+				6A6549411EB2EB3E002EBBCC /* DAOUserNotificationSetting+dncToDAO.h */,
+				6A6549421EB2EB3E002EBBCC /* DAOUserNotificationSetting+dncToDAO.m */,
 				6AD37F791DCE610E00FFF836 /* DAOWishlist+dncToDAO.h */,
 				6AD37F7A1DCE610E00FFF836 /* DAOWishlist+dncToDAO.m */,
 			);
@@ -612,6 +617,7 @@
 				6A02B4DA1E762A7400161A8A /* DAOFlag+dncToDAO.m in Sources */,
 				6AD37F571DCE60FF00FFF836 /* NSMutableDictionary+daoPhotoToDNC.m in Sources */,
 				6AD37F501DCE60FF00FFF836 /* NSMutableDictionary+daoCheckinToDNC.m in Sources */,
+				6A6549431EB2EB3E002EBBCC /* DAOUserNotificationSetting+dncToDAO.m in Sources */,
 				6AD37F851DCE610E00FFF836 /* DAORating+dncToDAO.m in Sources */,
 				6AD37F5A1DCE60FF00FFF836 /* NSMutableDictionary+daoUserToDNC.m in Sources */,
 				6AD37F0C1DCE606900FFF836 /* AppDelegate.m in Sources */,
