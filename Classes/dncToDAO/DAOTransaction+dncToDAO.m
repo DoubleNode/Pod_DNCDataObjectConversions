@@ -102,6 +102,7 @@
     self.paymentType    = [self stringFromString:dictionary[@"payment_type"]];
     self.paymentData    = dictionary[@"payment_type"];
 
+    self.chargeAfter    = [self dateFromNumber:dictionary[@"charge_after"]];
     self.holdUntil      = [self dateFromNumber:dictionary[@"hold_until"]];
     self.cancelAfter    = [self dateFromNumber:dictionary[@"cancel_after"]];
     self.charged        = [self dateFromNumber:dictionary[@"charged"]];
