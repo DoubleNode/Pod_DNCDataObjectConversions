@@ -72,7 +72,10 @@
     self.id = [self idFromString:dictionary[@"id"]];
 
     self.orderId    = [self idFromString:dictionary[@"order_id"]];
-    self.order      = self.class.createOrder;   self.order.id = self.orderId;
+    if (self.orderId.length)
+    {
+        self.order  = self.class.createOrder;   self.order.id = self.orderId;
+    }
     
     id  contactData = dictionary[@"contact"];
     if (contactData && (contactData != NSNull.null))
