@@ -61,10 +61,13 @@
 
     NSString*   conversationId  = [self idFromString:dictionary[@"conversation_id"]];
     
-    self.conversation   = [self.class.createConversation dncToDAO:@{
-                                                                    @"id" : conversationId,
-                                                                    }];
-
+    if (conversationId.length)
+    {
+        self.conversation   = [self.class.createConversation dncToDAO:@{
+                                                                        @"id" : conversationId,
+                                                                        }];
+    }
+    
     self.subject    = [self stringFromString:dictionary[@"subject"]];
     self.message    = [self stringFromString:dictionary[@"message"]];
     self.type       = [self stringFromString:dictionary[@"message_type"]];

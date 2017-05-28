@@ -86,6 +86,8 @@
             
             if (daoMessage)
             {
+                daoMessage.conversation = self;
+                
                 [daoMessages addObject:daoMessage];
             }
         }
