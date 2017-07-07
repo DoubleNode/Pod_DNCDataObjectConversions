@@ -35,8 +35,8 @@
     
     self.id         = [self idFromString:dictionary[@"id"]];
     
-    self.action     = [self idFromString:dictionary[@"action"]];
-    self.text       = [self idFromString:dictionary[@"text"]];
+    self.action     = [self stringFromString:dictionary[@"action"]];
+    self.text       = [self stringFromString:dictionary[@"text"]];
     
     NSString*   type    = [self stringFromString:dictionary[@"type"]];
     if ([type isEqualToString:@"activity"])
