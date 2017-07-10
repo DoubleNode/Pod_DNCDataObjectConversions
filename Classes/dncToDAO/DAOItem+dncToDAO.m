@@ -91,7 +91,6 @@
     if (photo && (photo != NSNull.null))
     {
         self.defaultPhoto   = [self.class.createPhoto dncToDAO:photo];
-        
     }
     
     {

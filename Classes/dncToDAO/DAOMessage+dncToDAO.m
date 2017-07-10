@@ -14,6 +14,7 @@
 #import "DAOConversation+dncToDAO.h"
 #import "DAOItem+dncToDAO.h"
 #import "DAOLocation+dncToDAO.h"
+#import "DAOPhoto+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
 @implementation DAOMessage (dncToDAO)
@@ -41,6 +42,11 @@
 + (DAOLocation*)createLocation
 {
     return DAOLocation.location;
+}
+
++ (DAOPhoto*)createPhoto
+{
+    return DAOPhoto.photo;
 }
 
 + (DAOUser*)createUser
@@ -72,6 +78,39 @@
     self.message    = [self stringFromString:dictionary[@"message"]];
     self.type       = [self stringFromString:dictionary[@"message_type"]];
 
+    if (!self.photos.count)
+    {
+        NSArray<NSDictionary* >*    photos = dictionary[@"photo"];
+        
+        NSMutableArray<DAOPhoto* >* daoPhotos = [NSMutableArray arrayWithCapacity:photos.count];
+        
+        if ([photos isKindOfClass:NSDictionary.class])
+        {
+            photos = @[ photos ];
+        }
+        if (photos)
+        {
+            for (NSDictionary* photo in photos)
+            {
+                if (photo[@"path"] && ![photo[@"path"] isEqual:NSNull.null])
+                {
+                    DAOPhoto*   daoPhoto   = [self.class.createPhoto dncToDAO:photo];
+                    if (daoPhoto)
+                    {
+                        [daoPhotos addObject:daoPhoto];
+                    }
+                }
+            }
+        }
+        
+        self.photos = daoPhotos;
+        
+        for (DAOPhoto* daoPhoto in self.photos)
+        {
+            daoPhoto.message = self;
+        }
+    }
+    
     NSString*   fromType    = [self stringFromString:dictionary[@"from_type"]];
     NSString*   fromId      = [self idFromString:dictionary[@"from_type_id"]];
     

@@ -58,6 +58,10 @@
     {
         self.locationId = [self idFromString:dictionary[@"type_id"]];
     }
+    else if ([type isEqualToString:@"message"])
+    {
+        self.messageId  = [self idFromString:dictionary[@"type_id"]];
+    }
     else if ([type isEqualToString:@"user"])
     {
         self.userId     = [self idFromString:dictionary[@"type_id"]];

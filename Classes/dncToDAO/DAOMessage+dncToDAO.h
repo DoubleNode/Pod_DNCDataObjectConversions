@@ -17,6 +17,7 @@
 + (DAOConversation*)createConversation;
 + (DAOItem*)createItem;
 + (DAOLocation*)createLocation;
++ (DAOPhoto*)createPhoto;
 + (DAOUser*)createUser;
 
 @end
