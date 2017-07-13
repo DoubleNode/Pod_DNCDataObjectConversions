@@ -103,7 +103,7 @@
     self.data       = [self dictionaryFromJsonString:dictionary[@"data"]];
 
     self.paymentType    = [self stringFromString:dictionary[@"payment_type"]];
-    self.paymentData    = dictionary[@"payment_type"];
+    self.paymentData    = dictionary[@"payment_data"];
 
     self.chargeAfter    = [self dateFromNumber:dictionary[@"charge_after"]];
     self.holdUntil      = [self dateFromNumber:dictionary[@"hold_until"]];
