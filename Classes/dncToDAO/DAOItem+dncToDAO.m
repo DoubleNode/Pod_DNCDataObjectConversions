@@ -87,6 +87,22 @@
     self.descriptionString  = [self stringFromString:dictionary[@"description"]];
     self.rating             = [self numberFromString:dictionary[@"rating"]];
     
+    self.ratingTypes        = @{ };
+    
+    id  ratingTypes = dictionary[@"rating_types"];
+    if (ratingTypes && (ratingTypes != NSNull.null))
+    {
+        NSMutableDictionary*    ratingTypes = NSMutableDictionary.dictionary;
+        
+        [ratingTypes enumerateKeysAndObjectsUsingBlock:
+         ^(NSString* _Nonnull key, NSNumber* _Nonnull value, BOOL* _Nonnull stop)
+         {
+             ratingTypes[key]   = value;
+         }];
+        
+        self.ratingTypes    = ratingTypes;
+    }
+    
     id  photo = dictionary[@"photo"];
     if (photo && (photo != NSNull.null))
     {

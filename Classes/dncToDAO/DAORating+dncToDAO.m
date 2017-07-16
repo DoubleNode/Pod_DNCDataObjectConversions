@@ -41,6 +41,8 @@
         self.value  = @5;
     }
     
+    self.ratingType = [self stringFromString:dictionary[@"rating_type"]];
+    
     self.itemId     = [self idFromString:dictionary[@"type_id"]];
     self.reviewId   = [self idFromString:dictionary[@"review_id"]];
     self.userId     = [self idFromString:dictionary[@"user_id"]];
