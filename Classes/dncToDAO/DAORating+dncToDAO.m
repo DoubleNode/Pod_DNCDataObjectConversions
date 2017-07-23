@@ -42,10 +42,23 @@
     }
     
     self.ratingType = [self stringFromString:dictionary[@"rating_type"]];
-    
-    self.itemId     = [self idFromString:dictionary[@"type_id"]];
-    self.reviewId   = [self idFromString:dictionary[@"review_id"]];
     self.userId     = [self idFromString:dictionary[@"user_id"]];
+    self.reviewId   = [self idFromString:dictionary[@"review_id"]];
+
+    NSString*   type    = [self stringFromString:dictionary[@"type"]];
+    
+    if ([type isEqualToString:@"item"])
+    {
+        self.itemId = [self idFromString:dictionary[@"type_id"]];
+    }
+    else if ([type isEqualToString:@"location"])
+    {
+        self.locationId = [self idFromString:dictionary[@"type_id"]];
+    }
+    else if ([type isEqualToString:@"user"])
+    {
+        self.userId = [self idFromString:dictionary[@"type_id"]];
+    }
     
     self._status    = @"success";
     self._created   = [self timeFromString:dictionary[@"added"]];
@@ -58,3 +71,4 @@
 }
 
 @end
+
