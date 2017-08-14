@@ -11,6 +11,7 @@
 #import "DAOReview+dncToDAO.h"
 
 #import "DAOPhoto+dncToDAO.h"
+#import "DAORating+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
 @implementation DAOReview (dncToDAO)
@@ -23,6 +24,11 @@
 + (DAOPhoto*)createPhoto
 {
     return DAOPhoto.photo;
+}
+
++ (DAORating*)createRating
+{
+    return DAORating.rating;
 }
 
 + (DAOUser*)createUser
@@ -82,6 +88,40 @@
         for (DAOPhoto* daoPhoto in self.photos)
         {
             daoPhoto.review  = self;
+        }
+    }
+    
+    if (!self.ratings.count)
+    {
+        NSArray<NSDictionary* >*    ratings = dictionary[@"ratings"];
+        
+        NSMutableArray<DAORating* >* daoRatings = [NSMutableArray arrayWithCapacity:ratings.count];
+        
+        NSMutableDictionary<NSString*, DAORating* >* daoKeyedRatings = NSMutableDictionary.dictionary;
+
+        if ([ratings isKindOfClass:NSDictionary.class])
+        {
+            ratings = @[ ratings ];
+        }
+        if (ratings)
+        {
+            for (NSDictionary* rating in ratings)
+            {
+                DAORating*   daoRating = [self.class.createRating dncToDAO:rating];
+                if (daoRating)
+                {
+                    [daoRatings addObject:daoRating];
+                    daoKeyedRatings[daoRating.ratingType] = daoRating;
+                }
+            }
+        }
+        
+        self.ratings        = daoRatings;
+        self.keyedRatings   = daoKeyedRatings;
+        
+        for (DAORating* daoRating in self.ratings)
+        {
+            daoRating.review  = self;
         }
     }
     
