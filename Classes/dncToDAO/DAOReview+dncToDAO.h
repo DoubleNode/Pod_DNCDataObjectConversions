@@ -8,12 +8,17 @@
 
 #import <DNCDataObjects/DAOReview.h>
 
+@class DAOPhoto;
+@class DAORating;
+@class DAOUser;
+
 @interface DAOReview (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
 
 + (DAOPhoto*)createPhoto;
++ (DAORating*)createRating;
 + (DAOUser*)createUser;
 
 @end
