@@ -10,6 +10,7 @@
 
 #import "DAOReview+dncToDAO.h"
 
+#import "DAOPhoto+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
 @implementation DAOReview (dncToDAO)
@@ -17,6 +18,11 @@
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
    return [DAOReview.review dncToDAO:dictionary];
+}
+
++ (DAOPhoto*)createPhoto
+{
+    return DAOPhoto.photo;
 }
 
 + (DAOUser*)createUser
@@ -45,6 +51,39 @@
     self.ratingId  = [self idFromString:dictionary[@"rating_id"]];
     self.photoId   = [self idFromString:dictionary[@"photo_id"]];
     self.userId    = [self idFromString:dictionary[@"user_id"]];
+    
+    if (!self.photos.count)
+    {
+        NSArray<NSDictionary* >*    photos = dictionary[@"photos"];
+        
+        NSMutableArray<DAOPhoto* >* daoPhotos = [NSMutableArray arrayWithCapacity:photos.count];
+        
+        if ([photos isKindOfClass:NSDictionary.class])
+        {
+            photos = @[ photos ];
+        }
+        if (photos)
+        {
+            for (NSDictionary* photo in photos)
+            {
+                if (photo[@"path"] && ![photo[@"path"] isEqual:NSNull.null])
+                {
+                    DAOPhoto*   daoPhoto   = [self.class.createPhoto dncToDAO:photo];
+                    if (daoPhoto)
+                    {
+                        [daoPhotos addObject:daoPhoto];
+                    }
+                }
+            }
+        }
+        
+        self.photos = daoPhotos;
+        
+        for (DAOPhoto* daoPhoto in self.photos)
+        {
+            daoPhoto.review  = self;
+        }
+    }
     
     NSString*   type    = [self stringFromString:dictionary[@"type"]];
     

@@ -13,6 +13,7 @@
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
 
++ (DAOPhoto*)createPhoto;
 + (DAOUser*)createUser;
 
 @end
