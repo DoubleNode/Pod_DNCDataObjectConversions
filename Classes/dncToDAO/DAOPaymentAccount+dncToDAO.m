@@ -43,6 +43,7 @@
 
     self.type           = [self stringFromString:dictionary[@"type"]];
     self.name           = [self stringFromString:dictionary[@"name"]];
+    self.cardType       = [self stringFromString:dictionary[@"card_type"]];
     self.accountToken   = [self stringFromString:dictionary[@"token"]];
     self.accountNumber  = [self stringFromString:dictionary[@"account_number"]];
     self.expirationDate = [self dateFromString:dictionary[@"expiration_date"]];
