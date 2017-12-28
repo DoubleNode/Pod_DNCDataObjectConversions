@@ -1,21 +1,21 @@
 Pod::Spec.new do |s|
 
   s.name         = "DNCDataObjectConversions"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "A base collection of default DNCore Data Object Conversions."
 
   s.description  = <<-DESC
                     A base collection of default DNCore Data Object Conversions for base interactions with server Core.
                    DESC
 
-  s.homepage     = "https://github.com/DoubleNode/Pod_DNCDataObjectConversions"
+  s.homepage     = "https://github.com/Four23Creative/Pod_DNCDataObjectConversions"
   s.license      = { :type => "PRIVATE", :file => "README.md" }
 
   s.author             = { "Darren Ehlers" => "me@darrenehlers.com" }
   s.social_media_url   = "http://twitter.com/ehlersd"
 
   s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/DoubleNode/Pod_DNCDataObjectConversions.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Four23Creative/Pod_DNCDataObjectConversions.git", :tag => "#{s.version}" }
 
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
