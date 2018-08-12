@@ -86,7 +86,7 @@
         
         if ([photos isKindOfClass:NSDictionary.class])
         {
-            photos = @[ photos ];
+            photos = @[ (NSDictionary*)photos ];
         }
         if (photos)
         {

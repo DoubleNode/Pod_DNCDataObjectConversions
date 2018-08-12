@@ -66,7 +66,7 @@
         
         if ([photos isKindOfClass:NSDictionary.class])
         {
-            photos = @[ photos ];
+            photos = @[ (NSDictionary*)photos ];
         }
         if (photos)
         {
@@ -101,7 +101,7 @@
 
         if ([ratings isKindOfClass:NSDictionary.class])
         {
-            ratings = @[ ratings ];
+            ratings = @[ (NSDictionary*)ratings ];
         }
         if (ratings)
         {
