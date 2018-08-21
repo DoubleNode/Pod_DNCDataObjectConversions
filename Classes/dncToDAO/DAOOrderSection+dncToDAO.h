@@ -1,21 +1,20 @@
 //
-//  DAOOrder+dncToDAO.h
+//  DAOOrderSection+dncToDAO.h
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <DNCDataObjects/DAOOrder.h>
+@import DNCDataObjects;
 
 @class DAOCategory;
 @class DAOItem;
 @class DAOLineitem;
 @class DAOLocation;
-@class DAOOrderSection;
-@class DAOTransaction;
+@class DAOOrder;
 
-@interface DAOOrder (dncToDAO)
+@interface DAOOrderSection (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary;
 - (instancetype)dncToDAO:(NSDictionary*)dictionary;
@@ -24,8 +23,7 @@
 + (DAOItem*)createItem;
 + (DAOLineitem*)createLineitem;
 + (DAOLocation*)createLocation;
-+ (DAOOrderSection*)createOrderSection;
-+ (DAOTransaction*)createTransaction;
++ (DAOOrder*)createOrder;
 + (DAOUser*)createUser;
 
 @end

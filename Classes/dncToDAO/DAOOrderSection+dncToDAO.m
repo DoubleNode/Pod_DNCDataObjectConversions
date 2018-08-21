@@ -1,5 +1,5 @@
 //
-//  DAOOrder+dncToDAO.m
+//  DAOOrderSection+dncToDAO.m
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,21 +8,20 @@
 
 @import DNCore;
 
-#import "DAOOrder+dncToDAO.h"
+#import "DAOOrderSection+dncToDAO.h"
 
 #import "DAOCategory+dncToDAO.h"
 #import "DAOItem+dncToDAO.h"
 #import "DAOLineitem+dncToDAO.h"
 #import "DAOLocation+dncToDAO.h"
-#import "DAOOrderSection+dncToDAO.h"
-#import "DAOTransaction+dncToDAO.h"
+#import "DAOOrder+dncToDAO.h"
 #import "DAOUser+dncToDAO.h"
 
-@implementation DAOOrder (dncToDAO)
+@implementation DAOOrderSection (dncToDAO)
 
 + (instancetype)dncToDAO:(NSDictionary*)dictionary
 {
-    return [DAOOrder.order dncToDAO:dictionary];
+    return [DAOOrderSection.orderSection dncToDAO:dictionary];
 }
 
 + (DAOCategory*)createCategory
@@ -45,14 +44,9 @@
     return DAOLocation.location;
 }
 
-+ (DAOOrderSection*)createOrderSection
++ (DAOOrder*)createOrder
 {
-    return DAOOrderSection.orderSection;
-}
-
-+ (DAOTransaction*)createTransaction
-{
-    return DAOTransaction.transaction;
+    return DAOOrder.order;
 }
 
 + (DAOUser*)createUser
@@ -71,8 +65,7 @@
     
     self.id = [self idFromString:dictionary[@"id"]];
 
-    self.status = [self stringFromString:dictionary[@"status"]];
-    self.state  = [self stringFromString:dictionary[@"state"]];
+    self.name   = [self stringFromString:dictionary[@"name"]];
     self.total  = [self numberFromString:dictionary[@"total"]];
     self.data   = [self dictionaryFromJsonString:dictionary[@"data"]];
 
@@ -123,60 +116,6 @@
         }
         
         self.lineitems = daoLineitems;
-    }
-    
-    {
-        NSArray<NSDictionary* >* orderSections = dictionary[@"orderSections"];
-        
-        NSMutableArray<DAOOrderSection* >*  daoOrderSections = [NSMutableArray arrayWithCapacity:orderSections.count];
-        
-        for (NSDictionary* orderSection in orderSections)
-        {
-            DAOOrderSection*    daoOrderSection;
-            
-            if ([orderSection isKindOfClass:DAOOrderSection.class])
-            {
-                daoOrderSection = (DAOOrderSection*)orderSection;
-            }
-            else
-            {
-                daoOrderSection = [self.class.createOrderSection dncToDAO:orderSection];
-            }
-            
-            if (daoOrderSection)
-            {
-                [daoOrderSections addObject:daoOrderSection];
-            }
-        }
-        
-        self.orderSections = daoOrderSections;
-    }
-    
-    {
-        NSArray<NSDictionary* >* transactions = dictionary[@"transactions"];
-        
-        NSMutableArray<DAOTransaction* >*  daoTransactions = [NSMutableArray arrayWithCapacity:transactions.count];
-        
-        for (NSDictionary* transaction in transactions)
-        {
-            DAOTransaction*     daoTransaction;
-            
-            if ([transaction isKindOfClass:DAOTransaction.class])
-            {
-                daoTransaction = (DAOTransaction*)transaction;
-            }
-            else
-            {
-                daoTransaction = [self.class.createTransaction dncToDAO:transaction];
-            }
-            
-            if (daoTransaction)
-            {
-                [daoTransactions addObject:daoTransaction];
-            }
-        }
-        
-        self.transactions = daoTransactions;
     }
     
     self._status    = @"success";
