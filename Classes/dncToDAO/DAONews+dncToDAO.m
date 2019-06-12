@@ -45,7 +45,7 @@
     self.body       = [self stringFromString:dictionary[@"body"]];
     self.bodyShort  = [self stringFromString:dictionary[@"body_short"]];
 
-    self.imageUrl   = [self urlFromString:dictionary[@"image"]];
+    self.imageUrl   = [self urlStringFromString:dictionary[@"image"]];
 
     self.expiration = [self timeFromString:dictionary[@"expiration"]];
 

@@ -42,8 +42,8 @@
     self.bucketName = [self stringFromString:dictionary[@"bucketName"]];
 
     self.accountId          = [self idFromString:dictionary[@"accountId"]];
-    self.apiUrl             = [self urlFromString:dictionary[@"apiUrl"]];
-    self.downloadUrl        = [self urlFromString:dictionary[@"downloadUrl"]];
+    self.apiUrl             = [self urlStringFromString:dictionary[@"apiUrl"]];
+    self.downloadUrl        = [self urlStringFromString:dictionary[@"downloadUrl"]];
     self.minimumPartSize    = [self numberFromString:dictionary[@"minimumPartSize"]];
 
     self.user       = [self.class.createUser dncToDAO:dictionary[@"user"]];

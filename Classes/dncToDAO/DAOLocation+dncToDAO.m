@@ -76,13 +76,13 @@
     {
         self.name               = [self stringFromString:dictionary[@"bdb_name"]];
         self.descriptionString  = [self stringFromString:dictionary[@"bdb_description"]];
-        self.website            = [self urlFromString:dictionary[@"bdb_website"]];
+        self.website            = [self urlStringFromString:dictionary[@"bdb_website"]];
     }
     else
     {
         self.name               = [self stringFromString:dictionary[@"name"]];
         self.descriptionString  = [self stringFromString:dictionary[@"description"]];
-        self.website            = [self urlFromString:dictionary[@"website"]];
+        self.website            = [self urlStringFromString:dictionary[@"website"]];
     }
     self.rating     = [self numberFromString:dictionary[@"rating"]];
     

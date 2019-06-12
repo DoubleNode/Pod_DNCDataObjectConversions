@@ -32,8 +32,8 @@
     
     /*
     self.id             = [self idFromString:item[@"id"]];
-    self.url            = [self urlFromString:item[@"path"]];
-    self.url_preload    = [self urlFromString:item[@"path_preload"]];
+    self.url            = [self urlStringFromString:item[@"path"]];
+    self.url_preload    = [self urlStringFromString:item[@"path_preload"]];
     self.comment        = [self stringFromString:item[@"comment"]];
     self.userId         = [self idFromString:item[@"user_id"]];
     

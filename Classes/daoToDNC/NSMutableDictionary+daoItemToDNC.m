@@ -79,9 +79,9 @@
                                 };
         
         self.labels         = @{
-                                @"large"    : [self urlFromString:beer[@"bdb_image_large"]],
-                                @"medium"   : [self urlFromString:beer[@"bdb_image_medium"]],
-                                @"icon"     : [self urlFromString:beer[@"bdb_image_icon"]],
+                                @"large"    : [self urlStringFromString:beer[@"bdb_image_large"]],
+                                @"medium"   : [self urlStringFromString:beer[@"bdb_image_medium"]],
+                                @"icon"     : [self urlStringFromString:beer[@"bdb_image_icon"]],
                                 };
     }
     else

@@ -37,7 +37,7 @@
     self.body       = [self stringFromString:item[@"body"]];
     self.bodyShort  = [self stringFromString:item[@"body_short"]];
 
-    self.imageUrl   = [self urlFromString:item[@"image"]];
+    self.imageUrl   = [self urlStringFromString:item[@"image"]];
 
     self.expiration = [self dateFromString:item[@"expiration"]];
 

@@ -40,8 +40,8 @@
     DNCAssert([dictionary isKindOfClass:NSDictionary.class], DNCLD_DAO, @"dictionary is not a NSDictionary");
     
     self.id             = [self idFromString:dictionary[@"id"]];
-    self.url            = [self urlFromString:dictionary[@"path"]];
-    self.url_preload    = [self urlFromString:dictionary[@"path_preload"]];
+    self.url            = [self urlStringFromString:dictionary[@"path"]];
+    self.url_preload    = [self urlStringFromString:dictionary[@"path_preload"]];
     self.comment        = [self stringFromString:dictionary[@"comment"]];
     self.userId         = [self idFromString:dictionary[@"user_id"]];
     

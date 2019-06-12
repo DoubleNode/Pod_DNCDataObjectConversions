@@ -38,13 +38,13 @@
     {
         self.name               = [self stringFromString:item[@"bdb_name"]];
         self.descriptionString  = [self stringFromString:item[@"bdb_description"]];
-        self.website            = [self urlFromString:item[@"bdb_website"]];
+        self.website            = [self urlStringFromString:item[@"bdb_website"]];
     }
     else
     {
         self.name               = [self stringFromString:item[@"name"]];
         self.descriptionString  = [self stringFromString:item[@"description"]];
-        self.website            = [self urlFromString:item[@"website"]];
+        self.website            = [self urlStringFromString:item[@"website"]];
     }
     
     self.followingFlag        = ([item[@"my_follow"] isKindOfClass:NSDictionary.class] ? YES : NO);
@@ -66,9 +66,9 @@
         //self.mailingListURL       = brewery[@"bdb_mailingListURL"];
         self.organic              = brewery[@"bdb_isOrganic"];
         
-        NSString*   imageLarge  = [self urlFromString:brewery[@"bdb_image_large"]];
-        NSString*   imageMedium = [self urlFromString:brewery[@"bdb_image_medium"]];
-        NSString*   imageIcon   = [self urlFromString:brewery[@"bdb_image_icon"]];
+        NSString*   imageLarge  = [self urlStringFromString:brewery[@"bdb_image_large"]];
+        NSString*   imageMedium = [self urlStringFromString:brewery[@"bdb_image_medium"]];
+        NSString*   imageIcon   = [self urlStringFromString:brewery[@"bdb_image_icon"]];
         
         self.images     = @{
                             @"large"    : (imageLarge  ? imageLarge : @""),
