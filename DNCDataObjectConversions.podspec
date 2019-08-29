@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DNCDataObjectConversions"
-  s.version      = "0.3.2"
+  s.version      = "0.5.0"
   s.summary      = "A base collection of default DNCore Data Object Conversions."
 
   s.description  = <<-DESC
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/DoubleNode/Pod_DNCDataObjectConversions"
-  s.license      = { :type => "PRIVATE", :file => "README.md" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Darren Ehlers" => "me@darrenehlers.com" }
   s.social_media_url   = "http://twitter.com/ehlersd"

@@ -98,6 +98,7 @@
 		6A81CCAE1E2B413400C4613A /* NSMutableDictionary+daoCategoryToDNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+daoCategoryToDNC.m"; path = "Classes/daoToDNC/NSMutableDictionary+daoCategoryToDNC.m"; sourceTree = "<group>"; };
 		6A81CCB01E2B426300C4613A /* DAOCategory+dncToDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAOCategory+dncToDAO.h"; path = "Classes/dncToDAO/DAOCategory+dncToDAO.h"; sourceTree = "<group>"; };
 		6A81CCB11E2B426300C4613A /* DAOCategory+dncToDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DAOCategory+dncToDAO.m"; path = "Classes/dncToDAO/DAOCategory+dncToDAO.m"; sourceTree = "<group>"; };
+		6AC77C62231862D0004EF336 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6AD37F041DCE606900FFF836 /* DNCDataObjectConversions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNCDataObjectConversions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD37F081DCE606900FFF836 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6AD37F0A1DCE606900FFF836 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -264,6 +265,7 @@
 		6AD37F2C1DCE60DB00FFF836 /* Cocoapod */ = {
 			isa = PBXGroup;
 			children = (
+				6AC77C62231862D0004EF336 /* LICENSE */,
 				6AD37F8B1DCE612100FFF836 /* README.md */,
 				6AD37F8A1DCE612100FFF836 /* DNCDataObjectConversions.podspec */,
 				6AD37F2D1DCE60E100FFF836 /* Classes */,
